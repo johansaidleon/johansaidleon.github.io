@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --azulclaro: #48D6ED;
+    --ROJOTINTO: #920b0b;
+    --azulnegro: #303342;
+    --negro: #333333;
+    --negro2: #000;
+    --gris: #b2b3b3;
+    --fondo: #fffefc;
+    --verdeazul: #157a8a;
+    --magenta: #9c2759;
+    --blanco: #fff;
+    --degradado: linear-gradient(49.54deg, #337ab7 2.89%, #0b3860 80.34%);
+}
+
+
+menu{
+    font-optical-sizing: 5px;
+    justify-content: space-between;
+    align-items: flex;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Marcellus", serif;
+}
+nav{
+    background-color: var(--negro2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 65%;
+}
+
+.item{
+    color: var(--blanco);
+    font-family: "Marcellus", serif;
+    font-size: 2em;
+    text-decoration: none;
+    margin: 0 1.5rem;
+}
+
+.btnlogin{
+    background-color: var(--ROJOTINTO);
+    color: var(--blanco);
+    padding: 0.1rem 1rem;
+    font-family: "Marcellus", serif;
+    font-size: 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 1.5rem;
+}
+
+
+/*banner*/
+
+#banner{
+    background-image: url(../img/slide1.jpg);
+    min-height: 500px;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.banner-title {
+    color: var(--blanco);
+    background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+    padding: 2rem;
+    width: 50%;
+}
+.banner-title h1{
+   
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+
+}
+
+
+
+#info{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+
+
+}
+#info p{
+    font-size: 1.7rem;
+    margin: 1rem;
+    flex-basis: 60%;
+
+}
+
+#info img{
+    margin: 2rem;
+    flex-basis: 40%;
+    max-width: 300px;
+}
+
+#feature{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/biblioteca.jpg);
+}
+#feature h1{
+    color: var(--blanco);
+    text-align: center;
+    font-size: 3rem;
+    background-color: rgba(0,0,0,0.5);
+    margin: 1.5rem 0;
+    text-shadow: 2px 2px 2px #000;
+    font-weight: 300;
+}
+
+.feature-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-blue{
+    background-color: var(--ROJOTINTO);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 85% ;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--blanco);
+    border-radius: 5px;
+
+}
+
+.box-black{
+    background-color:  rgba(34, 35, 46, 0.733);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--blanco);
+    border-radius: 5px;
+
+}
+.box-blue i, .box-black i{
+    font-size: 1.5em;
+    margin: 1rem;
+
+
+}
+
+.box-blue p, .box-black p{
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+
+
+}
+
+
+#ubicanos h1{
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 1rem;
+    font-family: "marcellus", serif;
+}
+
+
+

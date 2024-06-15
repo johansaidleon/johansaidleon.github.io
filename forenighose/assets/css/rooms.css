@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --azulclaro: #AEFBFF;
+    --azuloscuro: #377AB7;
+    --azulnegro: #135078;
+    --ROJOTINTO: #920b0b;
+    --rojoclaro: #811010c9;
+    --grises: #292222;
+    --negro: #333333;
+    --negro2: #000;
+    --negro3: #424242;
+    --negro4: #797878;
+    --gris: #ebebeb;
+    --fondo: #FFEEFC;
+    --verdeazul: #10978c;
+    --magenta: #9C2759;
+    --blanco: #FFFFFF;
+    --degradado: linear-gradient(49.54deg, #377AB7 2.89%, #135078 80.34%)
+}
+
+html{
+    font-size: 16px;
+    background-color: #b6abab;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    margin: 0px;
+    display: flex;
+    background-size:auto;
+    min-height: 100%;
+    size: 50%;
+   
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-family: "Marcellus", serif;
+}
+
+main{
+    display: flex;
+    height: 600px;
+    width: 1366px;
+}
+
+#nav{
+    height: 607px;
+    width: 304px;
+    color: var(--blanco);
+}
+
+.logo{
+    background: linear-gradient(to bottom, var(--ROJOTINTO), var(--grises));
+}
+
+.logo img{
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+    padding: 30px 20px 20px 10px;
+    align-items: center;
+}
+
+.inicio{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+
+.inicio img{
+    width: 45px;
+    height: 50px;
+    margin: 0.5rem;
+
+}
+
+.datos p{
+    font-size: 0.7em;
+}
+
+.datos h2, p{
+    padding: 0 1.2rem;
+    margin: 1px auto;
+    font-family: "Roboto", sans-serif;
+}
+
+.datos h2{
+
+    font-size: 1em;
+    justify-content: center;
+    font-family: "Roboto"sans-serif;
+}
+
+.nav_opciones{
+    background-color: var(--grises);
+    height: 301px;
+    text-align: center;
+    justify-content: flex-start;
+    padding: 25px 0;
+    
+}
+
+.nav_opciones a{
+    text-decoration: none;
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    font-family: "Marcellus", serif;
+}
+
+.nav_opciones span{
+    padding: 1px;
+    
+}
+.cambio_color:hover {
+    background-color: var(--ROJOTINTO);
+    height: 15%;
+}
+
+
+
+.nav_opciones i{
+    margin: 0 5px;
+}
+
+.opcion1{
+    margin: 20px 0 0 0;
+}
+
+.cerrarsesion{
+    background-color: var(--negro4);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.cerrarsesion a{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+#nobarra{
+    height: 607px;
+    width: 1366px;
+}
+
+#feature h1 {
+    color: var(--blanco);
+    text-align: center;
+    font-size: 12px;
+    background-color: var(--ROJOTINTO);
+    display: block;
+    text-shadow: white;
+    font-weight: 300;
+    position: relative;
+  bottom: 0.8rem;
+}
+.titulo{
+    font-family: "Marcellus", serif;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.filtro{
+ 
+    display: flex;
+    background-color: var(--gris);
+    height: 50px;
+    justify-content: space-around;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: var(--negro2);
+}
+
+.filtro div{
+    margin: 0;
+    padding: 13px 0;
+    border-radius: 0;
+}
+
+.habitaciones{
+    display: flex;
+    flex-direction:row;
+}
+
+.habitacion{
+    box-shadow: 3px 3px 1.7px #bebebe;
+    margin: 15px 60px;
+    text-align: center;
+    justify-content: center;
+    height: 50%;
+
+}
+
+
+
+.habitacion h2{
+    font-family: "Marcellus", serif;
+    margin: 2px;
+    font-size: 14.7px;
+}
+
+.habitacion p{
+    font-size: 10px;
+    margin: 0 0 10px 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.habitacion button{
+    margin: 0 0 10px 0;
+    color: var(--blanco);
+}
+
+.habitacion img{
+    width:299px;
+  
+}
+
+.inactivar{
+    background-color: var(--magenta);
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+}
+
+.modificar{
+    background-color: var(--negro3);
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+}
+
+i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+

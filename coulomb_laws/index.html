@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content=" johan said gelvez leon " >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>leyes de coulomb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    body {
+      background-color: rgb(137, 157, 187); /* Cambia este valor al color que desees */
+    }
+    .contenedor {
+      text-align: center;
+      padding: 20px; /* Agregamos un poco de espaciado para visualización */
+    }
+  </style>
+
+
+<style>
+    .contenedor {
+      text-align: center;
+    }
+  </style>
+
+
+
+<style>
+    /* Estilos del btn con el id "btn" */
+    #btn {
+      background-color: #3a83d6; /* Cambia este valor al color que desees */
+      color: #ffffff; /* Cambia este valor al color de texto que desees */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Estilos adicionales para mejorar la apariencia */
+    #btn:hover {
+      background-color: rgb(193, 90, 219); /* Cambia este valor al color que deseas al pasar el ratón sobre el botón */
+    }
+  </style>
+
+<div class="contenedor">
+<body>
+  <!-- radio -->
+  <input type="radio" id="forceRadio" name="variables" checked>
+  <label for="forceRadio">FUERZA</label>
+
+  <input type="radio" id="charge1Radio" name="variables">
+  <label for="charge1Radio">CARGA #1</label>
+
+  <input type="radio" id="charge2Radio" name="variables">
+  <label for="charge2Radio">CARGA #2</label>
+
+  <input type="radio" id="distancebwtheobjectsRadio" name="variables">
+  <label for="distancebwtheobjectsRadio">DISTANCIA B/W DEL OBJETO</label><br><br>
+  <!-- end radio -->
+  
+  <label for="v1" id="variable1">(q1) Charge 1 (C)</label>
+  <input type="number" id="v1"><br><br>
+  
+  <label for="v2" id="variable2">(q2) Charge 2 (C)</label>
+  <input type="number" id="v2"><br><br>
+  
+  <label for="v3" id="variable3">(r) Distance  (m)</label>
+  <input type="number" id="v3"><br><br>
+
+  <button id="btn">Comprueba</button>
+
+
+  
+  <p id="result"></p>
+  <p>
+    Inserte la información en el formulario y la calculadora determinará la ley de Coulomb <br> 
+    
+    ¿Qué es la ley de Coulomb??<br>
+    
+    La ley de Coulomb es una ley experimental de la física que cuantifica la cantidad de fuerza entre dos partículas cargadas eléctricamente y estacionarias.<br>
+    
+    ¿Cómo se calcula la ley de Coulomb? <br>
+    
+    Para calcular la ley de Coulomb, debes usar la siguiente fórmula:<br>
+    
+    F = k ((q1 * q2) / r^2)<br>
+
+    Donde:<br>
+
+    F = Fuerza electrica<br>
+
+    k = constante coulomb<br>
+
+    q1, q2 = las cargas<br>
+
+    r = la distancia o separacion<br>
+
+    ¿Por qué utilizar la ley de Coulomb?<br>
+
+    La ley de Coulomb se utiliza para predecir cuál será la fuerza de la repulsión o atracción electrostática entre dos cargas.<br>
+</p>
+</div>
+  <script src="app.js"></script>
+  
+</body>
+</html>
