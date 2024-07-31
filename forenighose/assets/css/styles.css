@@ -162,6 +162,21 @@ nav {
     margin: 1rem 0;
 }
 
+/* Estilos generales */
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* Media Queries */
 
 @media (max-width: 768px) {
@@ -170,6 +185,12 @@ nav {
         gap: 0.5rem;
         overflow-x: auto;
     }
+
+
+    .map-container {
+        padding-top: 75%; /* Cambiar el aspecto si es necesario */
+    }
+
 
     .item, .btnlogin {
         font-size: 1.2em;
