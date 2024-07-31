@@ -14,24 +14,8 @@ header {
   background-color: #333;
   color: #fff;
   padding: 10px;
-}
-
-#about {
-  text-align: center;
-}
-
-#about p {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
-.imagen-circular {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-content {
@@ -50,36 +34,42 @@ nav ul {
 }
 
 nav ul li {
-  margin: 10px;
+  margin: 5px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  padding: 10px 15px;
+  display: block;
 }
 
 section {
   padding: 45px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#about, #projects, #contact {
+#about, #projects, #contact, #Educacion {
   background-color: #fff;
 }
 
-form button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+#about {
+  text-align: center;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.imagen-circular {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
 .carousel {
@@ -134,7 +124,7 @@ footer {
 }
 
 .box-black {
-  background-color: rgba(34, 35, 46, 0.541);
+  background-color: rgba(0, 0, 0, 0.541);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,15 +185,15 @@ footer {
 }
 
 #Educacion h1 {
-  color: white;
+  color: black;
 }
 
 #contenedorslide {
-  color: white;
+  color: black;
 }
 
 .project {
-  background-color: rgba(56, 56, 65, 0.541);
+  background-color: rgba(11, 11, 14, 0.651);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,7 +206,7 @@ footer {
 }
 
 .project:hover {
-  background-color: #302927ce;
+  background-color: #333;
 }
 
 #projects a {
@@ -267,16 +257,6 @@ footer {
   margin: 0;
 }
 
-.nivel-manejo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.descripcion-nivel {
-  text-align: auto;
-}
-
 .contenedor_educacion {
   display: flex;
   justify-content: space-between;
@@ -289,12 +269,53 @@ footer {
   min-width: 300px;
 }
 
+#Educacion {
+  background-color: #333;
+}
+
+#Educacion h1 {
+  color: white;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0;
+}
+
+
 @media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-levels {
+    padding-left: 0;
+    border-left: none;
+    margin-top: 20px;
+  }
+
   .contenedor_educacion {
-      flex-direction: column;
+    flex-direction: column;
+    gap: 50px;
   }
 
   .contenedor_educacion > div {
-      width: 100%;
+    width: 100%;
   }
+
+  .carousel-inner img {
+    height: auto;
+  }
+
+  
+
 }
