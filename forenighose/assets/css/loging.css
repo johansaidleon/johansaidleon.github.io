@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-:root{
+:root {
     --azulclaro: #48D6ED;
     --ROJOTINTO: #920b0b;
     --azulnegro: #303342;
@@ -14,120 +14,151 @@
     --degradado: linear-gradient(49.54deg, #337ab7 2.89%, #0b3860 80.34%);
 }
 
-.cosa{
-    text-align: center;
-    height: 2rem;
-    font-family: marcellus;
-
-}
-
-*{
+* {
     margin: 0;
     padding: 0;
-    size: 50%;
+    box-sizing: border-box;
 }
 
-.img_caja{
-    width: 1rem;
-    height: 4rem; 
+html {
+    font-size: 16px;
 }
-  
-  html{
-    font-size: 25px;
-  }
 
-  body {
+body {
     background-size: cover;
     background-position: bottom;
     background-image: url(../img/estudiante.jpeg);
     display: grid;
     place-content: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
 
-  }
+.cosa {
+    text-align: center;
+    font-family: 'Marcellus', serif;
+}
 
-
-.login{
-    width: 22rem;
-    background-color: rgba(85, 13, 4, 0.596); /* Rojo semi-transparente */
-
+.login {
+    width: 90%;
+    max-width: 22rem;
+    background-color: rgba(85, 13, 4, 0.596);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-bottom: 85px;
-}
-.div_logo{
- background-color: white;
- margin-bottom: 1rem;
- height: 4rem;
- width: 100%;
- border-top-left-radius: 10px ;
- border-top-right-radius: 10px;
-}
-.img_caja{
-    width: 10rem;
-    padding: 0.6rem;
-    margin-bottom: 1rem;
-    max-width: 200px;
+    padding: 2rem;
 }
 
-i{
+.div_logo {
+    background-color: white;
+    margin-bottom: 1rem;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+i {
     font-size: 3rem;
     color: rgb(92, 11, 167);
     background-color: white;
-    border-radius: 100%;
-    border: 5rem;
+    border-radius: 50%;
+    padding: 1rem;
     margin-bottom: 1rem;
-    
 }
 
-.buttom{
+.buttom {
     display: block;
     width: 90%;
     color: white;
-    padding-bottom: 1.5rem;
     background-color: black;
     text-align: center;
-    font-family: marcellus;
-    border:none;
+    font-family: 'Marcellus', serif;
+    border: none;
     border-radius: 8px;
-    font-size: 25px;
-    margin-bottom: 1rem;
-    padding: 15px;
-    margin-top: 20px;
-    margin-left: 20px;
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    padding: 0.75rem;
 }
 
 .blank {
     width: 90%;
-    padding-left: 20px;
+    padding-left: 1rem;
     color: #ffffff;
-    display:block;
-    padding-bottom:1.5rem;
-    font-family: roboto;
+    display: block;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto', sans-serif;
     text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.37);
 }
-.input-style{
+
+.input-style {
     width: 100%;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.37);
-    border:none;
-    border-radius: 1.5px;
-    padding: 15px;
-    margin-top: 10px;
-}
-p{
-    color: white;
-    font-family: roboto;
-    font-size: 20px; 
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
 }
 
-a{
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+a {
     color: black;
     text-decoration: none;
 }
 
-.form-class{
+.form-class {
     width: 100%;
-    padding-inline:3rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .login {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .buttom {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .blank {
+        font-size: 0.875rem;
+    }
+
+    .input-style {
+        padding: 0.5rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttom {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .blank {
+        font-size: 0.75rem;
+    }
+
+    .input-style {
+        padding: 0.5rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
 }

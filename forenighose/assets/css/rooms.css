@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
 
 :root{
     --azulclaro: #AEFBFF;
@@ -19,149 +19,120 @@
     --degradado: linear-gradient(49.54deg, #377AB7 2.89%, #135078 80.34%)
 }
 
-html{
+html {
     font-size: 16px;
     background-color: #b6abab;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-
-body{
-    margin: 0px;
+body {
     display: flex;
-    background-size:auto;
-    min-height: 100%;
-    size: 50%;
-   
+    background-size: auto;
+    min-height: 100vh;
 }
 
-main{
+main {
     width: 100%;
-    height: 100%;
 }
 
-
-a{
+a {
     text-decoration: none;
 }
 
-h1{
+h1 {
     font-family: "Marcellus", serif;
 }
 
-main{
-    display: flex;
-    height: 600px;
-    width: 1366px;
-}
-
-#nav{
-    height: 607px;
-    width: 304px;
+#nav {
+    flex: 1;
+    min-height: 100vh;
     color: var(--blanco);
 }
 
-.logo{
+.logo {
     background: linear-gradient(to bottom, var(--ROJOTINTO), var(--grises));
-}
-
-.logo img{
-    height: 200px;
     display: flex;
-    margin: 0 auto;
-    padding: 30px 20px 20px 10px;
+    flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
-.inicio{
+.logo img {
+    height: 200px;
+}
+
+.inicio {
     display: flex;
     align-items: center;
     text-align: left;
 }
 
-
-.inicio img{
+.inicio img {
     width: 45px;
     height: 50px;
     margin: 0.5rem;
-
 }
 
-.datos p{
+.datos p {
     font-size: 0.7em;
 }
 
-.datos h2, p{
+.datos h2, p {
     padding: 0 1.2rem;
     margin: 1px auto;
     font-family: "Roboto", sans-serif;
 }
 
-.datos h2{
-
+.datos h2 {
     font-size: 1em;
     justify-content: center;
-    font-family: "Roboto"sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
-.nav_opciones{
+.nav_opciones {
     background-color: var(--grises);
-    height: 301px;
     text-align: center;
-    justify-content: flex-start;
     padding: 25px 0;
-    
 }
 
-.nav_opciones a{
+.nav_opciones a {
     text-decoration: none;
     color: var(--blanco);
     display: flex;
     justify-content: center;
     font-size: 1.2em;
     font-family: "Marcellus", serif;
+    padding: 10px 0;
 }
 
-.nav_opciones span{
-    padding: 1px;
-    
-}
-.cambio_color:hover {
+.nav_opciones .cambio_color:hover {
     background-color: var(--ROJOTINTO);
-    height: 15%;
 }
 
-
-
-.nav_opciones i{
+.nav_opciones i {
     margin: 0 5px;
 }
 
-.opcion1{
-    margin: 20px 0 0 0;
-}
-
-.cerrarsesion{
+.cerrarsesion {
     background-color: var(--negro4);
-    height: 50px;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
 }
 
-.cerrarsesion a{
-    padding: 10px;
-    text-decoration: none;
+.cerrarsesion a {
     color: white;
     font-size: 24px;
 }
 
-#nobarra{
-    height: 607px;
-    width: 1366px;
+#nobarra {
+    flex: 3;
+    padding: 20px;
 }
 
 #feature h1 {
@@ -169,90 +140,101 @@ main{
     text-align: center;
     font-size: 12px;
     background-color: var(--ROJOTINTO);
-    display: block;
     text-shadow: white;
     font-weight: 300;
     position: relative;
-  bottom: 0.8rem;
+    bottom: 0.8rem;
 }
-.titulo{
+
+.titulo {
     font-family: "Marcellus", serif;
     font-size: 25px;
     text-align: center;
-
 }
 
-.filtro{
- 
+.filtro {
     display: flex;
+    flex-wrap: wrap;
     background-color: var(--gris);
-    height: 50px;
-    justify-content: space-around;
+    padding: 10px;
+    justify-content: space-between;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: var(--negro2);
 }
 
-.filtro div{
-    margin: 0;
-    padding: 13px 0;
-    border-radius: 0;
+.filtro div {
+    margin: 5px;
 }
 
-.habitaciones{
+.habitaciones {
     display: flex;
-    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Cambiado de center a space-around */
 }
 
-.habitacion{
+.habitacion {
     box-shadow: 3px 3px 1.7px #bebebe;
-    margin: 15px 60px;
+    margin: 15px;
     text-align: center;
-    justify-content: center;
-    height: 50%;
-
+    flex: 1 1 calc(45% - 30px); /* Ajustado de 50% a 45% */
+    max-width: calc(45% - 30px); /* Ajustado de 50% a 45% */
+    min-width: 300px;
 }
 
-
-
-.habitacion h2{
+.habitacion h2 {
     font-family: "Marcellus", serif;
     margin: 2px;
     font-size: 14.7px;
 }
 
-.habitacion p{
+.habitacion p {
     font-size: 10px;
     margin: 0 0 10px 0;
     font-family: "Roboto", sans-serif;
 }
 
-.habitacion button{
+.habitacion button {
     margin: 0 0 10px 0;
     color: var(--blanco);
+    font-size: 10px;
 }
 
-.habitacion img{
-    width:299px;
-  
+.habitacion img {
+    width: 100%;
+    height: auto;
 }
 
-.inactivar{
+.inactivar {
     background-color: var(--magenta);
     font-family: "Roboto", sans-serif;
-    font-size: 10px;
 }
 
-.modificar{
+.modificar {
     background-color: var(--negro3);
     font-family: "Roboto", sans-serif;
-    font-size: 10px;
 }
 
-i{
+i {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 }
 
+@media (max-width: 768px) {
+    .nav_opciones a {
+        font-size: 1em;
+    }
+    .habitacion {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .filtro {
+        flex-direction: column;
+    }
+    .filtro div {
+        width: 100%;
+        text-align: center;
+    }
+}

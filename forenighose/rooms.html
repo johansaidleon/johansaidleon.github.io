@@ -1,229 +1,123 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/b3182ee30a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/rooms.css" />
     <title>Habitaciones</title>
-  </head>
-  <body>
-  
- 
-    <main class="container">
-
-      <nav id="nav">
-
-          <div class="logo">
-
-              <img src="assets/img/FOREING-removebg-preview.png"/>
-
-              <div class="inicio">
-
+</head>
+<body>
+<main class="container">
+    <nav id="nav">
+        <div class="logo">
+            <img src="assets/img/FOREING-removebg-preview.png"/>
+            <div class="inicio">
                 <i class="fa-solid fa-circle-user"></i>
-
-                  <div class="datos">
-
-                      <h2>usuario</h2>
-
-                      <p>ejemplo_correo@gmail.com</p>
-
-                  </div>
-
-              </div>
-
-          </div>
-
-          <div class="nav_opciones">
-
-              <div class="cambio_color" class="opcion1"><a href="rooms.html"><i class="fa-solid fa-bed"></i>Habitaciones</a></div>
-              <br>
-              <div class="cambio_color"><a href="rooms.html"><i class="fa-solid fa-bed"></i> Registrar habitaciones</a></div>
-              <br>
-              <div class="cambio_color"><a href="index.html"><i class="fa-solid fa-pencil"></i> Editar perfil</a></div>
-
-          </div>
-
-          <div class="cerrarsesion">
-
-              <a href="loging.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
-
-          </div>
-
-        </nav>
-
-      <section id="nobarra">
-
-          <div class="titulo">
-
-              <h1>Habitaciones</h1>
-
-          </div>
-
-          <div class="filtro">
-
-              <div>
-
-                  <label for="categoria">Categoría </label>
-                  <select name="categoria">
-                      <option selected value="0">Todas</option>
-                      <option value="1">Dobles </option>
-                      <option value="2">Sencillas</option>
-                  </select>
-
-              </div>
-
-              <div>
-                  
-                  <label for="estado">Estado</label>
-                  <select name="estado">
-                      <option selected value="0">Todas</option>
-                      <option value="1">Disponible</option>
-                      <option value="2">Reservada</option>
-                  </select>
-
-              </div>
-
-          </div>
-
-          <div class="habitaciones" id="feature">
-           
-
-              <div class="seccion">
-
-                  <div class="habitacion">
-                    <div id="feature">
-                      <img src="assets/img/camas.avif" alt="habitación de hotel"/>
-                        <div class="feature"> <h1 id="feature">Habitación doble</h1></div>
-                      </div>
-
-                      <h2>$800.000</h2>
-
-                      <p>Disfruta de un espacio acogedor y funcional en nuestra habitación doble
-                         para estudiantes. Dos cómodas camas individuales, amplios escritorios, 
-                         armarios espaciosos y conexión Wi-Fi garantizada para facilitar tus estudios. 
-                         Comparte momentos inolvidables con tu compañero de cuarto en un ambiente tranquilo
-                          y agradable.</p>
-                      
-
-
-                      <button class="modificar" name="modificar">Informacion</button>
-
-                      <button class="inactivar" name="inactivar">Reservar</button>
-
-                  </div>
-
-                  <div class="habitacion">
-            
-                      
-                      <div id="feature">
-                         <img src="assets/img/apenas.jpg" alt="habitación de hotel"/>
-                          <div class="feature"> <h1 id="feature">Habitación sencilla</h1></div>
-                        </div>
-                      <h2>$900.000</h2>
-
-                      <p>Nuestra acogedora habitación sencilla es el refugio perfecto para el estudiante independiente. Diseñada con una cama individual, un amplio escritorio y abundante espacio de almacenamiento, brinda la privacidad y tranquilidad necesarias para rendir al máximo. Conexión Wi-Fi de alta velocidad y acceso a áreas comunes equipadas.</p>
-                      
-
-
-                      <button class="modificar" name="modificar">Informacion</button>
-
-                      <button class="inactivar" name="inactivar">Reservar</button>
-
-                  </div>
-              
-              </div>
-
-              <div class="seccion">
-
-                  <div class="habitacion">
-
-                    <div id="feature">
-                      <img src="assets/img/alguien.jpeg" alt="habitación de hotel"/>
-                      <div class="feature"> <h1 id="feature">Habitación sencilla</h1></div>
-                    </div>
-
-                      <h2>$700.000</h2>
-
-                      <p>Pequeña pero acogedora, nuestra habitación simple es ideal para el estudiante que valora la comodidad. Una cama individual, un escritorio compacto y un armario inteligentemente diseñado ofrecen todo lo esencial. Aunque reducida, su atmósfera cálida y conectividad Wi-Fi garantizada crearán el ambiente propicio para estudiar y relajarse.  </p>
-                      
-
-
-                      <button class="modificar" name="modificar">Informacion</button>
-
-                      <button class="inactivar" name="inactivar">Reservar</button>
-
-                  </div>
-
-                  <div class="habitacion">
-                    <div id="feature">
-                      <img src="assets/img/recoge.jpg" alt="habitación de hotel"/>
-                        <div class="feature"> <h1 id="feature">Habitación doble</h1></div>
-                      </div>
-                    
-                      
-
-                      <h2>$750.000</h2>
-
-                      <p>Descubre la comodidad y funcionalidad en nuestro estudio doble para estudiantes. Un espacio abierto y luminoso que combina dos cómodas camas individuales con amplios escritorios y abundantes estanterías para almacenar tus pertenencias. Disfruta de la privacidad de tu propio rincón de estudio y convive en armonía con tu compañero de cuarto en esta acogedora morada estudiantil equipada con Wi-Fi de alta velocidad.</p>
-                      
-
-
-                      <button class="modificar" name="modificar">Informacion</button>
-
-                      <button class="inactivar" name="inactivar">Reservar</button>
-
-                  </div>
-              
-              </div>
-
-              <div class="seccion">
-
-                  <div class="habitacion">
-                    <div id="feature">
-                        <img src="assets/img/pohbre.webp" alt="habitación de hotel"/>
-                          <div class="feature"> <h1 id="feature">Habitación sencilla</h1></div>
-                        </div>
-
-                  
-
-                      <h2>$550.000</h2>
-
-                      <p>Diseñada para el estudiante minimalista, esta habitación sencilla pero funcional ofrece lo esencial: una cómoda cama individual y un escritorio práctico para estudiar. Un espacio depurado que fomenta la concentración, sin distracciones innecesarias. Perfecta para aprovechar al máximo tus ratos de estudio en un entorno tranquilo y acogedor.</p>
-                      
-
-                      <button class="modificar" name="modificar">Informacion</button>
-
-                      <button class="inactivar" name="inactivar">Reservar</button>
-
-                  </div>
-
-                  <div class="habitacion">
-                    <div class="habitacion">
-                        <div id="feature">
-                            <img src="assets/img/pareja.jpg" />
-                              <div class="feature"> <h1 id="feature">Habitación doble</h1></div>
-                            </div>
-                     
-
-                      <h2>$1.000.000</h2>
-
-                      <p>Nuestra espaciosa habitación doble es el oasis perfecto para parejas estudiantes. Una acogedora cama matrimonial invita al descanso después de largos días de estudio. Abundantes closets y estanterías ofrecen un generoso espacio para almacenar todas sus pertenencias. Complementada con un televisor de pantalla plana, creará una atmósfera relajada para disfrutar de momentos de entretenimiento juntos. Un ambiente acogedor y funcional diseñado para las parejas que buscan comodidad y privacidad durante su vida universitaria.</p>
-                      
-
-
-                      <button class="modificar" name="modificar">Informacion</button>
-
-                      <button class="inactivar" name="inactivar">Reservar</button>
-
-                  </div>
-
-              </div>
-
-          </div>
-
-      </section>
-
-  </main>
-  
-  </body>
+                <div class="datos">
+                    <h2>usuario</h2>
+                    <p>ejemplo_correo@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav_opciones">
+            <div class="cambio_color"><a href="rooms.html"><i class="fa-solid fa-bed"></i>Habitaciones</a></div>
+            <div class="cambio_color"><a href="rooms.html"><i class="fa-solid fa-bed"></i>Registrar habitaciones</a></div>
+            <div class="cambio_color"><a href="index.html"><i class="fa-solid fa-pencil"></i>Editar perfil</a></div>
+        </div>
+        <div class="cerrarsesion">
+            <a href="loging.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar sesión</a>
+        </div>
+    </nav>
+    <section id="nobarra">
+        <div class="titulo">
+            <h1>Habitaciones</h1>
+        </div>
+        <div class="filtro">
+            <div>
+                <label for="categoria">Categoría</label>
+                <select name="categoria">
+                    <option selected value="0">Todas</option>
+                    <option value="1">Dobles</option>
+                    <option value="2">Sencillas</option>
+                </select>
+            </div>
+            <div>
+                <label for="estado">Estado</label>
+                <select name="estado">
+                    <option selected value="0">Todas</option>
+                    <option value="1">Disponible</option>
+                    <option value="2">Reservada</option>
+                </select>
+            </div>
+        </div>
+        <div class="habitaciones" id="feature">
+            <div class="habitacion">
+                <div id="feature">
+                    <img src="assets/img/camas.avif" alt="habitación de hotel"/>
+                    <div class="feature"><h1 id="feature">Habitación doble</h1></div>
+                </div>
+                <h2>$800.000</h2>
+                <p>Disfruta de un espacio acogedor y funcional en nuestra habitación doble
+                    para estudiantes. Dos cómodas camas individuales, amplios escritorios,
+                    armarios espaciosos y conexión Wi-Fi garantizada para facilitar tus estudios.
+                    Comparte momentos inolvidables con tu compañero de cuarto en un ambiente tranquilo
+                    y agradable.</p>
+                <button class="modificar" name="modificar">Informacion</button>
+                <button class="inactivar" name="inactivar">Reservar</button>
+            </div>
+            <div class="habitacion">
+                <div id="feature">
+                    <img src="assets/img/apenas.jpg" alt="habitación de hotel"/>
+                    <div class="feature"><h1 id="feature">Habitación sencilla</h1></div>
+                </div>
+                <h2>$900.000</h2>
+                <p>Nuestra acogedora habitación sencilla es el refugio perfecto para el estudiante independiente. Diseñada con una cama individual, un amplio escritorio y abundante espacio de almacenamiento, brinda la privacidad y tranquilidad necesarias para rendir al máximo. Conexión Wi-Fi de alta velocidad y acceso a áreas comunes equipadas.</p>
+                <button class="modificar" name="modificar">Informacion</button>
+                <button class="inactivar" name="inactivar">Reservar</button>
+            </div>
+            <div class="habitacion">
+                <div id="feature">
+                    <img src="assets/img/alguien.jpeg" alt="habitación de hotel"/>
+                    <div class="feature"><h1 id="feature">Habitación sencilla</h1></div>
+                </div>
+                <h2>$700.000</h2>
+                <p>Pequeña pero acogedora, nuestra habitación simple es ideal para el estudiante que valora la comodidad. Una cama individual, un escritorio compacto y un armario inteligentemente diseñado ofrecen todo lo esencial. Aunque reducida, su atmósfera cálida y conectividad Wi-Fi garantizada crearán el ambiente propicio para estudiar y relajarse.</p>
+                <button class="modificar" name="modificar">Informacion</button>
+                <button class="inactivar" name="inactivar">Reservar</button>
+            </div>
+            <div class="habitacion">
+                <div id="feature">
+                    <img src="assets/img/recoge.jpg" alt="habitación de hotel"/>
+                    <div class="feature"><h1 id="feature">Habitación doble</h1></div>
+                </div>
+                <h2>$750.000</h2>
+                <p>Descubre la comodidad y funcionalidad en nuestro estudio doble para estudiantes. Un espacio abierto y luminoso que combina dos cómodas camas individuales con amplios escritorios y abundantes estanterías para almacenar tus pertenencias. Disfruta de la privacidad de tu propio rincón de estudio y convive en armonía con tu compañero de cuarto en esta acogedora morada estudiantil equipada con Wi-Fi de alta velocidad.</p>
+                <button class="modificar" name="modificar">Informacion</button>
+                <button class="inactivar" name="inactivar">Reservar</button>
+            </div>
+            <div class="habitacion">
+                <div id="feature">
+                    <img src="assets/img/pohbre.webp" alt="habitación de hotel"/>
+                    <div class="feature"><h1 id="feature">Habitación sencilla</h1></div>
+                </div>
+                <h2>$550.000</h2>
+                <p>Diseñada para el estudiante minimalista, esta habitación sencilla pero funcional ofrece lo esencial: una cómoda cama individual y un escritorio práctico para estudiar. Un espacio depurado que fomenta la concentración, sin distracciones innecesarias. Perfecta para aprovechar al máximo tus ratos de estudio en un entorno tranquilo y acogedor.</p>
+                <button class="modificar" name="modificar">Informacion</button>
+                <button class="inactivar" name="inactivar">Reservar</button>
+            </div>
+            <div class="habitacion">
+                <div id="feature">
+                    <img src="assets/img/pareja.jpg" alt="habitación de hotel"/>
+                    <div class="feature"><h1 id="feature">Habitación doble</h1></div>
+                </div>
+                <h2>$1.000.000</h2>
+                <p>Nuestra espaciosa habitación doble es el oasis perfecto para parejas estudiantes. Una acogedora cama matrimonial invita al descanso después de largos días de estudio. Abundantes closets y estanterías ofrecen un generoso espacio para almacenar todas sus pertenencias. Complementada con un televisor de pantalla plana, creará una atmósfera relajada para disfrutar de momentos de entretenimiento juntos. Un ambiente acogedor y funcional diseñado para las parejas que buscan comodidad y privacidad durante su vida universitaria.</p>
+                <button class="modificar" name="modificar">Informacion</button>
+                <button class="inactivar" name="inactivar">Reservar</button>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
 </html>

@@ -1,56 +1,33 @@
-const carouselItems = document.querySelectorAll('.carousel-item');
+const carousel = document.querySelector('.carousel-inner');
+const images = carousel.querySelectorAll('img');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
-const indicators = document.querySelectorAll('.carousel-indicators span');
+
 let currentIndex = 0;
-let interval;
 
-function showSlide(index) {
-  carouselItems.forEach((item, i) => {
-    if (i === index) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
+function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+}
+
+function nextImage() {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
     }
-  });
+    showImage(currentIndex);
+}
 
-  indicators.forEach((indicator, i) => {
-    if (i === index) {
-      indicator.classList.add('active');
-    } else {
-      indicator.classList.remove('active');
+function prevImage() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
     }
-  });
+    showImage(currentIndex);
 }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  showSlide(currentIndex);
-}
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-  showSlide(currentIndex);
-}
-
-function startAutoSlide() {
-  interval = setInterval(nextSlide, 3000); // Cambia la imagen cada 3 segundos
-}
-
-function stopAutoSlide() {
-  clearInterval(interval);
-}
-
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
-
-indicators.forEach((indicator, index) => {
-  indicator.addEventListener('click', () => {
-    currentIndex = index;
-    showSlide(currentIndex);
-    stopAutoSlide();
-    startAutoSlide();
-  });
-});
-
-startAutoSlide();
+// Cambiar imagen automáticamente cada 5 segundos
+setInterval(nextImage, 5000);
