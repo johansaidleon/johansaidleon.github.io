@@ -124,7 +124,7 @@ section {
 }
 
 .box-black {
-  background-color: rgba(0, 0, 0, 0.541);
+  background-color: rgba(8, 8, 8, 0.541);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,16 +184,24 @@ section {
   font-size: 15px;
 }
 
-#Educacion h1 {
-  color: black;
+#Educacion{
+  box-sizing: border-box;
+  background-color: #333;
 }
+
+
+#Educacion h1 {
+  color: rgb(255, 255, 255);
+  
+}
+
 
 #contenedorslide {
   color: black;
 }
 
 .project {
-  background-color: rgba(11, 11, 14, 0.651);
+  background-color: rgba(0, 0, 0, 0.699);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -206,7 +214,7 @@ section {
 }
 
 .project:hover {
-  background-color: #333;
+  background-color: #000000ce;
 }
 
 #projects a {
@@ -269,28 +277,6 @@ section {
   min-width: 300px;
 }
 
-#Educacion {
-  background-color: #333;
-}
-
-#Educacion h1 {
-  color: white;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-footer p {
-  margin: 0;
-}
-
-
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -315,7 +301,4 @@ footer p {
   .carousel-inner img {
     height: auto;
   }
-
-  
-
 }
