@@ -16,6 +16,22 @@
   box-sizing: border-box;
 }
 
+/* desplazamiento suave al ir a un ancla (#about, #experiencia, ...) */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id],
+#habilidades {
+  scroll-margin-top: 16px; /* deja un pequeño margen arriba al llegar */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   margin: 0;
