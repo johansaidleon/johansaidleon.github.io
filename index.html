@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Johan Said Gelvez León">
+    <meta name="description" content="Johan Said Gelvez León — Ingeniero de Sistemas en formación (UNIMINUTO), desarrollador freelance y practicante profesional. Angular, Express.js, SQL Server, ciberseguridad y redes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b3182ee30a.js" crossorigin="anonymous"></script>
+    <title>Johan Said Gelvez León — Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/funcion.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-inner">
+                <span class="logo">jsgl<span class="cursor-dot">_</span></span>
+                <ul>
+                    <li><a href="#about">sobre-mi</a></li>
+                    <li><a href="#experiencia">experiencia</a></li>
+                    <li><a href="#habilidades">habilidades</a></li>
+                    <li><a href="#projects">proyectos</a></li>
+                    <li><a href="#contact">contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-photo">
+                <img id="cara" src="img/photo.jpg" alt="Foto de Johan Said Gelvez León" class="imagen-circular">
+                <span class="status-pill"><span class="status-dot"></span> desarrollador de software y seguridad · abierto a freelance </span>
+            </div>
+
+            <div class="terminal" aria-hidden="false">
+                <div class="terminal-bar">
+                    <span class="dot dot-a"></span><span class="dot dot-b"></span><span class="dot dot-c"></span>
+                    <span class="terminal-title">johan@sistemas:~</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="line"><span class="prompt">$</span> whoami</p>
+                    <p class="line out">Johan Said Gelvez León</p>
+                    <p class="line"><span class="prompt">$</span> cat perfil.txt</p>
+                    <p class="line out">Estudiante de Ingeniería de Sistemas — décimo semestre, UNIMINUTO</p>
+                    <p class="line out">Bogotá, Colombia · gradúa febrero 2027</p>
+                    <p class="line"><span class="prompt">$</span> stack --list</p>
+                    <p class="line out">Angular · Express.js · SQL Server · Python · redes &amp; ciberseguridad</p>
+                    <p class="line typing"><span class="prompt">$</span> <span class="typed"></span><span class="blink">▌</span></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <p class="section-eyebrow">~/sobre-mi</p>
+        <h2>Sobre mí</h2>
+        <div class="feature-box about-container">
+            <div class="about-text">
+                <p>
+                    Soy estudiante de décimo (y último) semestre de Ingeniería de Sistemas en la
+                    Universidad Minuto de Dios (UNIMINUTO), Bogotá, con graduación proyectada para
+                    febrero de 2027. Actualmente hago mi práctica profesional en Adecco y trabajo en
+                    paralelo como desarrollador freelance para clientes propios.
+                </p>
+                <p>
+                    Mi formación combina desarrollo de software con una base fuerte en redes y
+                    ciberseguridad: he trabajado con el modelo OSI en Packet Tracer, hecho talleres de
+                    hacking ético (Kali Linux / Metasploit) y análisis de brechas bajo ISO/IEC 27001.
+                    Como complemento de grado, curso un Diplomado en Seguridad de la Información.
+                </p>
+                <p>
+                    En desarrollo web trabajo principalmente con Angular, Express.js y SQL Server, y
+                    también me muevo con Python, Java y JavaScript. Después de graduarme, mi plan es
+                    cursar la Especialización en Inteligencia Artificial de la Universidad Javeriana,
+                    aunque también evalúo continuar estudios de posgrado en Canadá (Humber, Conestoga u
+                    opciones similares).
+                </p>
+            </div>
+
+            <div class="skill-levels">
+                <p class="panel-label">nivel de dominio</p>
+                <div class="nivel-manejo">
+                    <div class="nivel-top"><span>Angular / Express.js</span><span class="nivel-tag">avanzado</span></div>
+                    <div class="signal"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span></div>
+                </div>
+                <div class="nivel-manejo">
+                    <div class="nivel-top"><span>SQL Server</span><span class="nivel-tag">avanzado</span></div>
+                    <div class="signal"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5 off"></span></div>
+                </div>
+                <div class="nivel-manejo">
+                    <div class="nivel-top"><span>Python</span><span class="nivel-tag">intermedio/alto</span></div>
+                    <div class="signal"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4 off"></span><span class="bar b5 off"></span></div>
+                </div>
+                <div class="nivel-manejo">
+                    <div class="nivel-top"><span>Redes &amp; ciberseguridad</span><span class="nivel-tag">intermedio/alto</span></div>
+                    <div class="signal"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4 off"></span><span class="bar b5 off"></span></div>
+                </div>
+                <div class="nivel-manejo">
+                    <div class="nivel-top"><span>Java / C#</span><span class="nivel-tag">intermedio alto</span></div>
+                    <div class="signal"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4 off"></span><span class="bar b5 off"></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia">
+        <p class="section-eyebrow">~/experiencia</p>
+        <h2>Experiencia</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <p class="timeline-date">jul 2023 — ene 2026</p>
+                <div class="timeline-content">
+                    <h3>Líder de Experiencia — Arcos Dorados (McDonald's)</h3>
+                    <p>Bogotá, Colombia. Liderazgo de equipo y operación en punto de servicio: coordinación
+                    de turnos, resolución de problemas en tiempo real y trabajo bajo presión con foco en
+                    experiencia del cliente.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-date">ene 2025 — mar 2026</p>
+                <div class="timeline-content">
+                    <h3>Desarrollador freelance — Fletcher Estudio de Arquitectura</h3>
+                    <p>Estudio de arquitectura comercial en Panamá (fltestudio.com). SEO técnico y de
+                    contenido (Yoast, legibilidad, metadatos y slugs), mantenimiento en WordPress/Elementor
+                    y ajustes de CSS a medida.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-date">actual</p>
+                <div class="timeline-content">
+                    <h3>Practicante profesional — Adecco</h3>
+                    <p>Práctica profesional en curso como parte del último semestre de Ingeniería de
+                    Sistemas, en paralelo con proyectos freelance propios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="habilidades" class="feature-box">
+        <section>
+            <p class="section-eyebrow light">~/habilidades</p>
+            <h1>Habilidades y certificaciones</h1>
+            <div class="contenedor_educacion">
+                <div>
+                    <div class="caja box-black">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h2>Habilidades blandas</h2>
+                        <div>
+                            <p>
+                                Trabajo en equipo y comunicación clara, forjadas liderando turnos y personas
+                                en un entorno de servicio de alta rotación. Me adapto rápido a nuevas
+                                tecnologías, resuelvo problemas bajo presión y gestiono bien el tiempo entre
+                                estudio, práctica profesional y proyectos freelance en paralelo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="caja box-black">
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Otras habilidades</h2>
+                        <div>
+                            <p>
+                                Metodologías ágiles (Scrum, Kanban) y PMBOK aplicadas en proyectos reales de
+                                software. Administración de sistemas Windows y Linux. Diseño y análisis de
+                                redes (modelo OSI, Packet Tracer), fundamentos de hacking ético con Kali
+                                Linux/Metasploit y análisis de brechas bajo ISO/IEC 27001.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <img src="img/mintic.png" alt="Certificación MinTIC" class="active">
+                            <img src="img/apis.png" alt="Curso de APIs">
+                            <img src="img/circuitos.png" alt="Curso de circuitos">
+                            <img src="img/desarrollo.png" alt="Curso de desarrollo">
+                            <img src="img/github.png" alt="Curso de GitHub">
+                            <img src="img/ingles.png" alt="Certificación de inglés">
+                        </div>
+                        <button class="prev" aria-label="Anterior">&#10094;</button>
+                        <button class="next" aria-label="Siguiente">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="projects">
+        <p class="section-eyebrow">~/proyectos</p>
+        <h1>Proyectos</h1>
+        <div class="feature-box">
+
+            <div class="project">
+                <i class="fa-solid fa-mug-hot"></i>
+                <div class="project-static">
+                    <span class="project-status">académico</span>
+                    <h3>PubControl</h3>
+                    <p>Sistema de gestión para bares desarrollado con Angular 18, Express.js y SQL Server bajo metodología PMBOK + Scrum, en equipo de 4 personas (BarSoft Solutions, UNIMINUTO).</p>
+                </div>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-calculator"></i>
+                <a href="coulomb_laws/index.html">
+                    <span class="project-status">demo</span>
+                    <h3>Ley de Coulomb</h3>
+                    <p>Herramienta interactiva del área de física eléctrica para el cálculo de la fuerza entre cargas según la ley de Coulomb.</p>
+                </a>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-house-chimney-user"></i>
+                <div class="project-static">
+                    <span class="project-status">proyecto</span>
+                    <h3>Foreing House</h3>
+                    <p>Aplicación que ayuda a estudiantes extranjeros a encontrar residencia cerca de su universidad: catálogo de habitaciones, filtros e inicio de sesión.</p>
+                </div>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-house-signal"></i>
+                <div class="project-static">
+                    <span class="project-status">proyecto</span>
+                    <h3>Monitoreo IoT por socket</h3>
+                    <p>Sistema de monitoreo IoT vía sockets que registra y muestra en tiempo real los datos enviados por un cliente conectado.</p>
+                </div>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-helicopter"></i>
+                <div class="project-static">
+                    <span class="project-status wip">en desarrollo</span>
+                    <h3>Dron de largo alcance vía celular</h3>
+                    <p>Proyecto personal open source: dron hexacóptero pilotado a ~10 km usando red celular en vez de radio control, con Raspberry Pi 4 como companion computer.</p>
+                </div>
+            </div>
+            <div class="project">
+                <i class="fa-solid fa-camera"></i>
+                <div class="project-static">
+                    <span class="project-status wip">en desarrollo</span>
+                    <h3>Bloqueo automático por cámara</h3>
+                    <p>Programa que usa la cámara del equipo para detectar presencia y bloquear la sesión automáticamente cuando el usuario se aleja.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <p class="section-eyebrow">~/contacto</p>
+        <h2>Contacto</h2>
+        <p class="contact-lead">¿Un proyecto en mente o una oportunidad para conversar? Escríbeme por cualquiera de estos canales.</p>
+
+        <div class="feature-box" id="redes">
+            <div>
+                <a href="https://www.instagram.com/johansaidleon/">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+            </div>
+
+            <div>
+                <a href="https://www.linkedin.com/in/johan-said-gelvez-leon-522109260/">
+                    <i class="fa-brands fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div>
+                <a href="https://github.com/johansaidleon">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+
+            <div>
+                <a href="https://wa.me/+573185078940" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Johan Said Gelvez León. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
