@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Johan Said Gelvez León">
+  <title>Ley de Coulomb — Calculadora</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <a class="volver" href="../index.html">← volver al portafolio</a>
+
+    <h1>Ley de Coulomb</h1>
+    <p class="lead">Elige la variable que quieres calcular, completa los demás datos y presiona <strong>Calcular</strong>.</p>
+
+    <div class="opciones" role="radiogroup" aria-label="Variable a calcular">
+      <input type="radio" id="forceRadio" name="variables" checked>
+      <label for="forceRadio">Fuerza</label>
+
+      <input type="radio" id="charge1Radio" name="variables">
+      <label for="charge1Radio">Carga #1</label>
+
+      <input type="radio" id="charge2Radio" name="variables">
+      <label for="charge2Radio">Carga #2</label>
+
+      <input type="radio" id="distancebwtheobjectsRadio" name="variables">
+      <label for="distancebwtheobjectsRadio">Distancia</label>
+    </div>
+
+    <div class="campo">
+      <label for="v1" id="variable1">(q1) Carga 1 (C)</label>
+      <input type="number" id="v1" step="any">
+    </div>
+    <div class="campo">
+      <label for="v2" id="variable2">(q2) Carga 2 (C)</label>
+      <input type="number" id="v2" step="any">
+    </div>
+    <div class="campo">
+      <label for="v3" id="variable3">(r) Distancia entre las cargas (m)</label>
+      <input type="number" id="v3" step="any">
+    </div>
+
+    <button id="btn">Calcular</button>
+    <p id="result" aria-live="polite"></p>
+
+    <section class="teoria">
+      <h2>¿Qué es la ley de Coulomb?</h2>
+      <p>Es una ley experimental de la física que cuantifica la fuerza entre dos partículas cargadas eléctricamente y en reposo.</p>
+
+      <h2>¿Cómo se calcula?</h2>
+      <p class="formula">F = k · (q1 · q2) / r²</p>
+      <ul>
+        <li><strong>F</strong>: fuerza eléctrica (N)</li>
+        <li><strong>k</strong>: constante de Coulomb (8.98755 × 10⁹ N·m²/C²)</li>
+        <li><strong>q1, q2</strong>: valor de las cargas (C)</li>
+        <li><strong>r</strong>: distancia de separación (m)</li>
+      </ul>
+
+      <h2>¿Para qué sirve?</h2>
+      <p>Para predecir la fuerza de atracción o repulsión electrostática entre dos cargas.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
