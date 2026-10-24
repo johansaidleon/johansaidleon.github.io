@@ -122,3 +122,22 @@ if ('IntersectionObserver' in window && sections.length) {
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(s => so.observe(s));
 }
+
+// ---------- visor de certificados ----------
+const lb = document.getElementById('lightbox');
+if (lb) {
+  const lbImg = document.getElementById('lb-img');
+  const lbCap = document.getElementById('lb-cap');
+  const closeLb = () => { lb.hidden = true; document.body.style.overflow = ''; };
+  document.querySelectorAll('.cert').forEach(c => {
+    c.addEventListener('click', () => {
+      lbImg.src = c.dataset.img;
+      lbImg.alt = c.dataset.title;
+      lbCap.textContent = c.dataset.title;
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lb-close')) closeLb(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
+}

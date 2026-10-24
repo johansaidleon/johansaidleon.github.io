@@ -829,3 +829,59 @@ nav ul li a.nav-cta:hover { background: #f0b458; color: var(--bg); }
 .stack-card p { margin: 10px 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
 #seguridad { max-width: 1100px; margin: 0 auto; }
 #seguridad h2 { margin-top: 0; margin-bottom: 1.8rem; font-size: 1.9rem; }
+
+/* ---------- habilidades blandas (en sobre-mí) ---------- */
+.soft-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 28px; }
+.soft-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 20px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.soft-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.soft-card > i { color: var(--amber); font-size: 1.3rem; margin-top: 3px; }
+.soft-card h3 { margin: 0 0 6px; font-size: 1rem; }
+.soft-card p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.6; max-width: none; }
+#about .soft-card p { max-width: none; }
+
+/* ---------- certificados ---------- */
+#certificados { max-width: 1100px; margin: 0 auto; }
+#certificados h2 { margin-top: 0; margin-bottom: 0.8rem; font-size: 1.9rem; }
+.section-lead { color: var(--muted); max-width: 560px; margin: 0 0 1.8rem; }
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+.cert {
+  font: inherit; color: inherit; text-align: left; cursor: pointer;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  padding: 0; overflow: hidden; display: flex; flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cert:hover, .cert:focus-visible { border-color: var(--amber); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+.cert-thumb { position: relative; display: block; aspect-ratio: 4 / 3; background: #0d1015; overflow: hidden; border-bottom: 1px solid var(--border); }
+.cert-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.4s ease; }
+.cert:hover .cert-thumb img { transform: scale(1.05); }
+.cert-zoom {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(18, 21, 27, 0.55); color: var(--amber); font-size: 1.6rem; opacity: 0; transition: opacity 0.25s ease;
+}
+.cert:hover .cert-zoom, .cert:focus-visible .cert-zoom { opacity: 1; }
+.cert-body { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; }
+.cert-tag {
+  align-self: flex-start; font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal);
+  background: rgba(95, 184, 168, 0.12); border-radius: 4px; padding: 3px 8px; margin-bottom: 6px;
+}
+.cert-title { font-weight: 600; font-size: 0.98rem; line-height: 1.35; }
+.cert-meta { font-size: 0.82rem; color: var(--muted); }
+.cert-meta.dim { font-family: var(--font-mono); font-size: 0.74rem; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; background: rgba(10, 12, 16, 0.92);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox figure { margin: 0; max-width: 960px; width: 100%; text-align: center; }
+.lightbox img { max-width: 100%; max-height: 80vh; border-radius: 6px; border: 1px solid var(--border); background: #fff; }
+.lightbox figcaption { margin-top: 12px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); }
+.lb-close {
+  position: absolute; top: 16px; right: 22px; background: none; border: 0; color: var(--text);
+  font-size: 2.2rem; cursor: pointer; line-height: 1;
+}
+.lb-close:hover { color: var(--amber); }
