@@ -11,7 +11,7 @@
   function currentTheme() {
     var set = root.getAttribute('data-theme');
     if (set === 'light' || set === 'dark') return set;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark'; // el tema por defecto es el oscuro; el claro solo si la persona lo elige
   }
 
   if (themeBtn) {

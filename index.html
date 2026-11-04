@@ -6,8 +6,7 @@
     <title>Johan Said Gelvez León — Portafolio</title>
     <meta name="author" content="Johan Said Gelvez León">
     <meta name="description" content="Johan Said Gelvez León, Ingeniero de Sistemas y analista informático en Bogotá. Desarrollo web full stack, seguridad de redes, hacking ético e ISO 27001. Busco vacantes junior en desarrollo y seguridad informática.">
-    <meta name="theme-color" content="#F3F5F9" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0F131A" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#0B0B0D">
     <meta property="og:title" content="Johan Said Gelvez León — Portafolio">
     <meta property="og:description" content="Ingeniero de Sistemas · Analista informático · Desarrollador full stack. Bogotá, Colombia.">
     <meta property="og:type" content="website">
@@ -64,7 +63,10 @@
         <!-- ===== Inicio ===== -->
         <section class="hero" id="top">
             <div class="hero-text">
-                <p class="status"><span class="status-dot" aria-hidden="true"></span> Abierto a vacantes · Bogotá, Colombia</p>
+                <div class="hero-id">
+                    <img class="avatar" src="img/photo-avatar.jpg" alt="Foto de Johan Said Gelvez León" width="96" height="96">
+                    <p class="status"><span class="status-dot" aria-hidden="true"></span> Abierto a vacantes · Bogotá, Colombia</p>
+                </div>
                 <h1>Johan Said <span class="accent">Gelvez León</span></h1>
                 <p class="role">Ingeniero de Sistemas · Analista informático</p>
                 <p class="lead">Desarrollo aplicaciones web completas y reviso que sean seguras. Estoy en el último semestre de Ingeniería de Sistemas, hago mi práctica en Adecco y tengo proyectos freelance funcionando en producción.</p>
@@ -77,7 +79,6 @@
             </div>
 
             <aside class="card-id" aria-label="Datos rápidos">
-                <img class="photo" src="img/photo.jpg" alt="Foto de Johan Said Gelvez León" width="300" height="300">
                 <dl class="facts">
                     <div><dt>Busco</dt><dd>Analista informático o desarrollador junior</dd></div>
                     <div><dt>Estudios</dt><dd>Ingeniería de Sistemas, UNIMINUTO. Grado en febrero de 2027</dd></div>
@@ -90,13 +91,13 @@
         <div class="stats">
             <div class="stat"><span class="stat-num">10.º</span><span class="stat-label">semestre, último año</span></div>
             <div class="stat"><span class="stat-num">3</span><span class="stat-label">clientes freelance</span></div>
-            <div class="stat"><span class="stat-num">8</span><span class="stat-label">lenguajes, con HTML y CSS</span></div>
+            <div class="stat"><span class="stat-num">9</span><span class="stat-label">lenguajes de programación</span></div>
             <div class="stat"><span class="stat-num">B2</span><span class="stat-label">nivel de inglés</span></div>
         </div>
 
         <!-- ===== Sobre mí ===== -->
         <section id="sobre-mi" class="block">
-            <p class="eyebrow">~/sobre-mi</p>
+            <p class="eyebrow">01 · Perfil</p>
             <h2>Sobre mí</h2>
 
             <div class="about">
@@ -145,7 +146,7 @@
 
         <!-- ===== Experiencia ===== -->
         <section id="experiencia" class="block">
-            <p class="eyebrow">~/experiencia</p>
+            <p class="eyebrow">02 · Trayectoria</p>
             <h2>Experiencia y formación</h2>
 
             <ol class="timeline">
@@ -210,9 +211,9 @@
 
         <!-- ===== Proyectos ===== -->
         <section id="proyectos" class="block">
-            <p class="eyebrow">~/proyectos</p>
+            <p class="eyebrow">03 · Proyectos</p>
             <h2>Proyectos</h2>
-            <p class="section-lead">Dos de ellos se pueden probar ahora mismo desde esta página: Pasapáginas y la calculadora de la ley de Coulomb.</p>
+            <p class="section-lead">Tres de ellos se pueden probar ahora mismo: Pasapáginas, la tienda de Flores Bot (el catálogo es público) y la calculadora de la ley de Coulomb.</p>
 
             <div class="filters" role="group" aria-label="Filtrar proyectos">
                 <button class="filter active" type="button" data-filter="all" aria-pressed="true">Todos</button>
@@ -230,6 +231,17 @@
                     <p>Aplicación web que convierte un PDF en un libro con páginas que se voltean. Funciona sin internet, se instala en el celular o el computador y procesa los archivos en el propio dispositivo, sin subirlos a ningún servidor. Está preparada también para escritorio (Electron) y Android (Capacitor).</p>
                     <div class="chips"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>PWA</span><span>pdf.js</span></div>
                     <a class="project-link" href="pasapaginas/">Abrir la app <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="project" data-cat="web">
+                    <div class="project-top"><i class="fa-brands fa-telegram" aria-hidden="true"></i><span class="status live">demo en vivo</span></div>
+                    <h3>Flores Bot: hábitos con recompensas</h3>
+                    <p>Sistema full stack para un hábito diario: la persona manda por Telegram la foto de sus comidas, un administrador las aprueba y cada aprobación suma tokens que se cambian por flores en una tienda web. Con penalización mensual, panel de administración con doble factor y despliegue en la nube a costo $0.</p>
+                    <div class="chips"><span>Node.js</span><span>Express</span><span>Telegraf</span><span>PostgreSQL</span><span>Render</span></div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://flores-bot.onrender.com" target="_blank" rel="noopener">Ver la tienda <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        <a class="project-link ghost" href="https://github.com/johansaidleon/flores-bot" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Código</a>
+                    </div>
                 </article>
 
                 <article class="project" data-cat="web">
@@ -289,20 +301,6 @@
                     <div class="chips"><span>ISO 27001</span><span>SonarQube</span><span>CWE</span></div>
                 </article>
 
-                <article class="project" data-cat="seguridad">
-                    <div class="project-top"><i class="fa-solid fa-network-wired" aria-hidden="true"></i><span class="status">académico</span></div>
-                    <h3>Redes con Packet Tracer</h3>
-                    <p>Modelo OSI en la práctica, direccionamiento IP, VLSM, enrutamiento estático y EIGRP, y topologías hub-and-spoke y pentágono.</p>
-                    <div class="chips"><span>Cisco</span><span>EIGRP</span><span>VLSM</span></div>
-                </article>
-
-                <article class="project" data-cat="web">
-                    <div class="project-top"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span class="status">proyecto</span></div>
-                    <h3>Simulador Saber Pro</h3>
-                    <p>Simulador interactivo de práctica con módulos de Inglés, Diseño de Software, Lectura Crítica y Comunicación Escrita, que construí para prepararme para el examen.</p>
-                    <div class="chips"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
-                </article>
-
                 <article class="project" data-cat="hardware">
                     <div class="project-top"><i class="fa-solid fa-helicopter" aria-hidden="true"></i><span class="status wip">en desarrollo</span></div>
                     <h3>Dron de largo alcance por red celular</h3>
@@ -336,11 +334,11 @@
 
         <!-- ===== Habilidades ===== -->
         <section id="habilidades" class="block">
-            <p class="eyebrow">~/habilidades</p>
+            <p class="eyebrow">04 · Competencias</p>
             <h2>Habilidades técnicas</h2>
 
             <h3 class="sub">Lenguajes</h3>
-            <p class="section-lead">Los ocho lenguajes que uso, con un ejemplo real de dónde los apliqué.</p>
+            <p class="section-lead">Los lenguajes que uso, cada uno con un ejemplo real de dónde lo apliqué.</p>
             <ul class="langs">
                 <li class="lang">
                     <span class="badge b-py" aria-hidden="true">Py</span>
@@ -348,7 +346,7 @@
                 </li>
                 <li class="lang">
                     <span class="badge b-js" aria-hidden="true">JS</span>
-                    <div><h4>JavaScript</h4><p>Backend con Express.js, interfaces interactivas y aplicaciones como Pasapáginas.</p></div>
+                    <div><h4>JavaScript</h4><p>Backend con Node.js y Express, el bot de Telegram de Flores Bot (Telegraf), interfaces interactivas y aplicaciones como Pasapáginas.</p></div>
                 </li>
                 <li class="lang">
                     <span class="badge b-ts" aria-hidden="true">TS</span>
@@ -364,15 +362,19 @@
                 </li>
                 <li class="lang">
                     <span class="badge b-sql" aria-hidden="true">SQL</span>
-                    <div><h4>SQL</h4><p>SQL Server, PostgreSQL, MySQL y SQLite en proyectos web.</p></div>
+                    <div><h4>SQL</h4><p>SQL Server, PostgreSQL (Neon), MySQL y SQLite en proyectos web.</p></div>
                 </li>
                 <li class="lang">
                     <span class="badge b-html" aria-hidden="true">HTML</span>
-                    <div><h4>HTML</h4><p>Páginas y aplicaciones web, como este portafolio, Pasapáginas y el Simulador Saber Pro.</p></div>
+                    <div><h4>HTML</h4><p>Páginas y aplicaciones web, como este portafolio, Pasapáginas y la tienda de Flores Bot.</p></div>
                 </li>
                 <li class="lang">
                     <span class="badge b-css" aria-hidden="true">CSS</span>
                     <div><h4>CSS</h4><p>Diseño responsive, temas claro y oscuro, y personalización de temas en WordPress.</p></div>
+                </li>
+                <li class="lang">
+                    <span class="badge b-sh" aria-hidden="true">Sh</span>
+                    <div><h4>Bash</h4><p>Comandos y scripts en Linux: laboratorios de hacking ético con Kali y administración de equipos.</p></div>
                 </li>
             </ul>
 
@@ -383,7 +385,7 @@
                 </div>
                 <div class="skill-card">
                     <h3><i class="fa-solid fa-database" aria-hidden="true"></i> Datos y herramientas</h3>
-                    <div class="chips big"><span>SQL Server</span><span>MySQL</span><span>PostgreSQL</span><span>SQLite</span><span>Git</span><span>GitHub</span><span>GitHub Actions</span></div>
+                    <div class="chips big"><span>SQL Server</span><span>MySQL</span><span>PostgreSQL</span><span>SQLite</span><span>Git</span><span>GitHub</span><span>GitHub Actions</span><span>Render</span><span>Neon</span><span>Telegram Bot API</span></div>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Seguridad y redes</h3>
@@ -417,7 +419,7 @@
 
         <!-- ===== Certificados ===== -->
         <section id="certificados" class="block">
-            <p class="eyebrow">~/certificados</p>
+            <p class="eyebrow">05 · Formación</p>
             <h2>Cursos y certificaciones</h2>
             <p class="section-lead">Formación complementaria en desarrollo web, backend, herramientas e inglés. Haz clic en un certificado para verlo completo.</p>
 
@@ -481,7 +483,7 @@
 
         <!-- ===== Contacto ===== -->
         <section id="contacto" class="block contact">
-            <p class="eyebrow">~/contacto</p>
+            <p class="eyebrow">06 · Contacto</p>
             <h2>¿Hablamos?</h2>
             <p class="section-lead">Busco mi primer puesto como analista informático o desarrollador junior, y también tomo proyectos freelance de webs, SEO, automatización e IA. Escríbeme por correo o LinkedIn.</p>
 
