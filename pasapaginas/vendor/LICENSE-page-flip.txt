@@ -19,3 +19,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+Nota local: page-flip.browser.js tiene dos retoques respecto al original (StPageFlip, MIT):
+1) resizeCanvas() dibuja el lienzo a la densidad de píxeles del dispositivo (hasta 3x) para que el texto no se vea borroso en celulares.
+2) clear() deja el lienzo transparente en lugar de pintarlo de blanco, para que se vea la mesa de lectura cuando el libro está cerrado.

@@ -4,7 +4,9 @@
   var wrap = $('#bookwrap'), counter = $('#counter'), jump = $('#jump');
   var prevBtn = $('#prev'), nextBtn = $('#next'), meta = $('#meta'), msg = $('#msg');
   var closeBtn = $('#close-book'), installBtn = $('#install');
-  var flip = null, urls = [], total = 0, loadToken = 0, current = null;
+  var flip = null, urls = [], total = 0, loadToken = 0, current = null, lastFile = null;
+  var hdBtn = $('#hd');
+  var hd = false;
   var MAX_SAVED_BYTES = 80 * 1024 * 1024;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -150,22 +152,24 @@
     var token = ++loadToken;
     try {
       await Promise.all([
-        document.fonts.load('700 40px "Bricolage Grotesque"'),
-        document.fonts.load('400 20px "IBM Plex Sans"'),
-        document.fonts.load('400 14px "IBM Plex Mono"')
+        document.fonts.load('600 40px "Cormorant Garamond"'),
+        document.fonts.load('italic 600 24px "Cormorant Garamond"'),
+        document.fonts.load('400 20px "Instrument Sans"'),
+        document.fonts.load('600 14px "Instrument Sans"')
       ]);
     } catch (e) {}
     var W = 640, H = 860;
-    var head = '"Bricolage Grotesque", system-ui, sans-serif';
-    var body = '"IBM Plex Sans", system-ui, sans-serif';
-    var mono = '"IBM Plex Mono", ui-monospace, monospace';
+    // Se dibuja al doble de resolución para que se vea nítido en pantallas de alta densidad.
+    var SC = 2;
+    var head = '"Cormorant Garamond", Georgia, serif';
+    var body = '"Instrument Sans", system-ui, sans-serif';
     var pages = [
       { cover: true, title: 'Pasapáginas', sub: 'Libro de ejemplo' },
-      { title: 'Cómo se usa', items: ['Pulsa Abrir PDF o arrastra un archivo a esta ventana.', 'Espera a que se preparen las páginas.', 'Pasa las páginas con el mouse, el dedo o las flechas del teclado.'], seq: true },
+      { title: 'Cómo se usa', items: ['Pulsa Abrir PDF o arrastra un archivo a esta ventana.', 'Espera a que se preparen las páginas.', 'Pasa las páginas con el dedo, el mouse o las flechas del teclado.'], seq: true },
       { title: 'Pasar páginas', items: ['Haz clic en una esquina o arrastra el borde de la hoja.', 'Con el teclado, usa las flechas izquierda y derecha. Inicio y Fin saltan a la primera y última página.', 'La barra de abajo te lleva directo a cualquier página.'] },
       { title: 'En el celular', items: ['Se muestra una página a la vez.', 'Desliza el dedo desde el borde para voltearla.', 'Gira el teléfono para ver dos páginas juntas.'] },
-      { title: 'Privacidad', items: ['El PDF se lee y se convierte dentro de tu dispositivo.', 'No se envía a ningún servidor.', 'La app recuerda el último libro y la página donde lo dejaste.'] },
-      { title: 'Sin internet', items: ['Una vez instalada, la app abre sin conexión.', 'Todo lo que necesita viene incluido.'] },
+      { title: 'Nitidez', items: ['El libro se prepara a la resolución de tu pantalla, así que el texto se ve nítido.', 'Si aun así lo ves pequeño, pulsa HD para preparar las páginas con más detalle.', 'Los PDF muy largos usan menos resolución para no llenar la memoria del teléfono.'] },
+      { title: 'Privacidad y sin internet', items: ['El PDF se lee y se convierte dentro de tu dispositivo. No se envía a ningún servidor.', 'La app recuerda el último libro y la página donde lo dejaste.', 'Una vez instalada, abre sin conexión.'] },
       { title: 'Límites', items: ['Los PDF muy largos tardan más en prepararse.', 'Los PDF con contraseña no se pueden abrir.', 'Las páginas se guardan como imagen, no se puede seleccionar texto.'] },
       { cover: true, back: true, title: 'Abre tu PDF', sub: 'Botón Abrir PDF, arriba a la derecha' }
     ];
@@ -173,47 +177,51 @@
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
       var c = document.createElement('canvas');
-      c.width = W; c.height = H;
+      c.width = W * SC; c.height = H * SC;
       var ctx = c.getContext('2d');
+      ctx.scale(SC, SC);
       ctx.textBaseline = 'alphabetic';
       if (p.cover) {
-        ctx.fillStyle = '#16233A'; ctx.fillRect(0, 0, W, H);
-        ctx.strokeStyle = '#8DA2FF'; ctx.lineWidth = 2; ctx.strokeRect(36, 36, W - 72, H - 72);
-        ctx.fillStyle = '#F2F5FB'; ctx.font = '700 60px ' + head;
-        ctx.fillText(p.title, 64, 330);
-        ctx.fillStyle = '#9FB0CC'; ctx.font = '400 22px ' + body;
-        ctx.fillText(p.sub, 66, 376);
+        ctx.fillStyle = '#0B0B0D'; ctx.fillRect(0, 0, W, H);
+        ctx.strokeStyle = '#C9A55C'; ctx.lineWidth = 1.5; ctx.strokeRect(36, 36, W - 72, H - 72);
+        ctx.strokeStyle = 'rgba(201,165,92,0.35)'; ctx.lineWidth = 1; ctx.strokeRect(46, 46, W - 92, H - 92);
+        ctx.fillStyle = '#F4EFE6'; ctx.font = '600 84px ' + head;
+        ctx.fillText(p.title, 72, 372);
+        ctx.fillStyle = '#C9A55C'; ctx.fillRect(74, 400, 64, 2);
+        ctx.fillStyle = '#D9B96C'; ctx.font = 'italic 600 30px ' + head;
+        ctx.fillText(p.sub, 74, 448);
         if (!p.back) {
-          ctx.fillStyle = '#8DA2FF'; ctx.font = '400 14px ' + mono;
-          ctx.fillText('PÁGINA 1 DE ' + pages.length, 66, H - 70);
+          ctx.fillStyle = '#B9B2A5'; ctx.font = '500 14px ' + body;
+          ctx.fillText('PÁGINA 1 DE ' + pages.length, 74, H - 76);
         }
       } else {
-        ctx.fillStyle = '#FBFAF6'; ctx.fillRect(0, 0, W, H);
-        ctx.fillStyle = '#16233A'; ctx.font = '700 40px ' + head;
-        ctx.fillText(p.title, 64, 130);
-        ctx.fillStyle = '#2340D8'; ctx.fillRect(64, 154, 56, 4);
-        ctx.fillStyle = '#26354D'; ctx.font = '400 21px ' + body;
-        var y = 220;
+        ctx.fillStyle = '#FBF8F1'; ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = '#1A1610'; ctx.font = '600 52px ' + head;
+        ctx.fillText(p.title, 64, 140);
+        ctx.fillStyle = '#B8923F'; ctx.fillRect(64, 164, 56, 3);
+        ctx.fillStyle = '#3A342A'; ctx.font = '400 22px ' + body;
+        var y = 232;
         for (var k = 0; k < p.items.length; k++) {
           var x = 64;
           if (p.seq) {
-            ctx.fillStyle = '#2340D8'; ctx.font = '400 15px ' + mono;
-            ctx.fillText(String(k + 1), 64, y);
-            ctx.fillStyle = '#26354D'; ctx.font = '400 21px ' + body;
-            x = 100;
+            ctx.fillStyle = '#B8923F'; ctx.font = '600 30px ' + head;
+            ctx.fillText(String(k + 1), 64, y + 2);
+            ctx.fillStyle = '#3A342A'; ctx.font = '400 22px ' + body;
+            x = 104;
           }
-          y = wrapText(ctx, p.items[k], x, y, W - x - 64, 32) + 18;
+          y = wrapText(ctx, p.items[k], x, y, W - x - 64, 33) + 20;
         }
-        ctx.fillStyle = '#7A8799'; ctx.font = '400 14px ' + mono;
+        ctx.fillStyle = '#8A7440'; ctx.font = '500 14px ' + body;
         ctx.textAlign = i % 2 === 0 ? 'left' : 'right';
         ctx.fillText(String(i + 1), i % 2 === 0 ? 64 : W - 64, H - 48);
         ctx.textAlign = 'left';
       }
-      var b = await toBlob(c, 'image/jpeg', 0.92);
+      var b = await toBlob(c, 'image/jpeg', 0.94);
       out.push(URL.createObjectURL(b));
     }
     if (token !== loadToken) { out.forEach(function (u) { URL.revokeObjectURL(u); }); return; }
-    current = null;
+    current = null; lastFile = null;
+    updateHd();
     mount(out, W / H, 0);
     setMeta('', out.length, true);
   }
@@ -297,6 +305,42 @@
     } catch (e) { return false; }
   }
 
+  /* ---------- resolución de las páginas ----------
+     Antes todas las páginas se generaban a 860 px de ancho, sin importar el
+     dispositivo: en un celular de densidad 3× (360 px CSS = 1080 px físicos) el
+     texto salía borroso. Ahora el ancho se calcula con lo que realmente se verá:
+       ancho CSS máximo de una página (en cualquier orientación o pantalla completa)
+       × densidad de píxeles del dispositivo × sobremuestreo.
+     Para no agotar la memoria, el tope baja con la cantidad de páginas. */
+  function pageWidthFor(w, h, ratio) {
+    var two = Math.min(w / 2, h * ratio);
+    return two >= MIN_PAGE_W ? two : Math.min(w, h * ratio);
+  }
+  function targetPixels(ratio, n, wantHd) {
+    var dpr = Math.min(window.devicePixelRatio || 1, 3);
+    var W = wrap.clientWidth || window.innerWidth, H = wrap.clientHeight || window.innerHeight;
+    var sw = (window.screen && screen.width) || W, sh = ((window.screen && screen.height) || H) - 130;
+    var css = Math.max(
+      pageWidthFor(W, H, ratio), pageWidthFor(H, W, ratio),
+      pageWidthFor(sw, sh, ratio), pageWidthFor(sh, sw, ratio)
+    );
+    var px = css * dpr * (wantHd ? 2.2 : 1.5);
+    // tope por cantidad de páginas (ancho en píxeles) y por área de cada imagen
+    var cap = n <= 40 ? 2000 : n <= 150 ? 1500 : 1100;
+    if (wantHd) cap = Math.round(cap * 1.3);
+    var maxArea = wantHd ? 6.5e6 : 4.2e6;
+    var W2 = Math.max(900, Math.min(px, cap));
+    var H2 = W2 / ratio;
+    if (W2 * H2 > maxArea) { W2 = Math.sqrt(maxArea * ratio); H2 = W2 / ratio; }
+    return { W: Math.round(W2), H: Math.round(H2) };
+  }
+
+  function updateHd() {
+    if (!hdBtn) return;
+    hdBtn.setAttribute('aria-pressed', String(hd));
+    hdBtn.disabled = !lastFile;
+  }
+
   async function loadPdf(file, opts) {
     opts = opts || {};
     if (!file) return;
@@ -322,30 +366,34 @@
       var first = await pdf.getPage(1);
       var v1 = first.getViewport({ scale: 1 });
       var ratio = v1.width / v1.height;
-      var W = n > 150 ? 640 : 860;
-      var H = Math.round(W / ratio);
-      if (H > 1500) { H = 1500; W = Math.round(H * ratio); }
+      var T = targetPixels(ratio, n, hd);
+      var W = T.W, H = T.H;
+      // un solo lienzo reutilizado para todas las páginas
+      var canvas = document.createElement('canvas');
+      canvas.width = W; canvas.height = H;
+      var ctx = canvas.getContext('2d');
+      var quality = hd ? 0.95 : 0.9;
       for (var i = 1; i <= n; i++) {
         if (token !== loadToken) throw new Error('cancelado');
         busy('Preparando páginas ' + i + ' de ' + n, (i - 1) / n);
         await frame();
         var page = i === 1 ? first : await pdf.getPage(i);
         var vb = page.getViewport({ scale: 1 });
-        var s = Math.min(W / vb.width, H / vb.height);
-        var vp = page.getViewport({ scale: s });
-        var canvas = document.createElement('canvas');
-        canvas.width = W; canvas.height = H;
-        var ctx = canvas.getContext('2d');
+        var sc = Math.min(W / vb.width, H / vb.height);
+        var vp = page.getViewport({ scale: sc });
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, W, H);
         var dx = (W - vp.width) / 2, dy = (H - vp.height) / 2;
-        await page.render({ canvasContext: ctx, viewport: vp, transform: [1, 0, 0, 1, dx, dy] }).promise;
-        var blob = await toBlob(canvas, 'image/jpeg', 0.86);
+        await page.render({ canvasContext: ctx, viewport: vp, transform: [1, 0, 0, 1, dx, dy], intent: 'display' }).promise;
+        var blob = await toBlob(canvas, 'image/jpeg', quality);
         made.push(URL.createObjectURL(blob));
         page.cleanup();
       }
       busy('Armando el libro…', 1);
       await frame();
       current = { name: file.name, size: file.size };
+      lastFile = file;
+      updateHd();
       mount(made, W / H, opts.startPage || 0);
       setMeta(file.name, n, false);
       if (!opts.skipSave) saveLast(file);
@@ -355,6 +403,7 @@
       var name = err && err.name;
       if (name === 'PasswordException') say('Este PDF tiene contraseña. Quítala y vuelve a intentarlo.', true);
       else if (name === 'InvalidPDFException') say('No se pudo leer el archivo. Puede estar dañado o no ser un PDF válido.', true);
+      else if (err && /memory|allocation|canvas/i.test(String(err.message))) say('Se acabó la memoria del dispositivo. Desactiva HD o prueba con un PDF más corto.', true);
       else say('No se pudo abrir el PDF. Prueba con otro archivo.', true);
     } finally {
       if (pdf) { try { pdf.destroy(); } catch (e) {} }
@@ -405,6 +454,34 @@
     setTimeout(refit, 150);
   });
 
+  /* ---------- nitidez HD ---------- */
+  hd = lsGet('pp:hd') === '1';
+  if (hdBtn) {
+    updateHd();
+    hdBtn.addEventListener('click', function () {
+      hd = !hd;
+      lsSet('pp:hd', hd ? '1' : '0');
+      updateHd();
+      if (lastFile) {
+        var idx = flip ? flip.getCurrentPageIndex() : 0;
+        loadPdf(lastFile, { startPage: idx, skipSave: true });
+      }
+    });
+  }
+
+  /* ---------- tema claro / oscuro (se comparte con el portafolio) ---------- */
+  var themeBtn = $('#theme');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      var tc = $('#theme-color');
+      if (tc) tc.setAttribute('content', next === 'light' ? '#F8F4EC' : '#0B0B0D');
+    });
+  }
+
   /* ---------- arrastrar y soltar ---------- */
   var drop = $('#drop'), depth = 0;
   function hasFiles(e) { return e.dataTransfer && Array.prototype.indexOf.call(e.dataTransfer.types || [], 'Files') !== -1; }
@@ -433,6 +510,17 @@
     installBtn.hidden = true;
   });
   window.addEventListener('appinstalled', function () { installBtn.hidden = true; });
+
+  // iPhone y iPad no avisan que se puede instalar: se muestra el botón con los pasos.
+  var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+  var isIos = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIos && !standalone) {
+    installBtn.hidden = false;
+    installBtn.addEventListener('click', function () {
+      if (deferredInstall) return;
+      say('Para instalarla en iPhone o iPad: toca el botón Compartir de Safari y elige «Añadir a pantalla de inicio».');
+    });
+  }
 
   /* PDF abiertos desde el sistema: "Abrir con" en escritorio (PWA) */
   var launched = false;

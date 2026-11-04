@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pasapáginas · Hoja de instrucciones</title>
+  <meta name="description" content="Todas las instrucciones de Pasapáginas en una hoja: abrir un PDF, pasar páginas, nitidez, instalar como app y solución de problemas.">
+  <meta name="theme-color" content="#0B0B0D" id="theme-color">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="doc">
+  <div class="sheet">
+    <div class="sheet-top no-print">
+      <a class="btn" href="./">&larr; Volver a Pasapáginas</a>
+      <button class="btn primary" type="button" onclick="window.print()">Imprimir o guardar en PDF</button>
+    </div>
+
+    <h1>Pasa<em>páginas</em></h1>
+    <p class="lead">Convierte un PDF en un libro con páginas que se voltean. Todo ocurre en tu dispositivo: el archivo no se sube a ningún servidor.</p>
+
+    <div class="sheet-grid">
+      <section>
+        <h2>1 · Abrir un PDF</h2>
+        <ol>
+          <li>Pulsa <strong>Abrir PDF</strong> (arriba a la derecha) y elige el archivo.</li>
+          <li>En el computador también puedes arrastrarlo a la ventana.</li>
+          <li>Espera a que termine la barra «Preparando páginas». Los PDF largos tardan más.</li>
+        </ol>
+        <p style="margin-top:6px">La app recuerda el último libro y la página donde lo dejaste. <strong>Cerrar libro</strong> lo borra y vuelve al libro de ejemplo.</p>
+      </section>
+
+      <section>
+        <h2>2 · Pasar las páginas</h2>
+        <ul>
+          <li><strong>Mouse o dedo:</strong> toca una esquina o arrastra el borde de la hoja.</li>
+          <li><strong>Teclado:</strong> <kbd>←</kbd> <kbd>→</kbd> pasan de página; <kbd>Inicio</kbd> y <kbd>Fin</kbd> saltan al principio y al final.</li>
+          <li><strong>Barra de abajo:</strong> flechas, contador y deslizador para ir directo a cualquier página.</li>
+          <li><strong>⛶</strong> activa la pantalla completa.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3 · En el celular</h2>
+        <ul>
+          <li>En vertical se ve una página a la vez.</li>
+          <li>Gira el teléfono para ver dos páginas juntas, como un libro abierto.</li>
+          <li>Si la letra se ve pequeña, usa una sola página en vertical y activa <strong>HD</strong>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4 · Nitidez (botón HD)</h2>
+        <ul>
+          <li>Por defecto las páginas se preparan según la resolución de tu pantalla, con un margen extra para que el texto se vea nítido.</li>
+          <li><strong>HD</strong> prepara las páginas con más detalle. Tarda más y usa más memoria.</li>
+          <li>Los PDF de más de 40 páginas usan menos resolución, y los de más de 150 aún menos, para no llenar la memoria del teléfono.</li>
+          <li>Si el dispositivo se queda sin memoria, apaga HD o divide el PDF.</li>
+        </ul>
+      </section>
+
+      <section class="wide">
+        <h2>5 · Instalarla como app</h2>
+        <ul>
+          <li><strong>Android (Chrome):</strong> botón <strong>Instalar app</strong> de la cabecera, o menú ⋮ → «Instalar app».</li>
+          <li><strong>iPhone / iPad (Safari):</strong> botón Compartir → «Añadir a pantalla de inicio».</li>
+          <li><strong>Windows / Mac / Linux (Chrome o Edge):</strong> icono de instalar en la barra de direcciones o botón <strong>Instalar app</strong>. Después, clic derecho sobre un PDF → «Abrir con» → Pasapáginas.</li>
+          <li><strong>Sin internet:</strong> una vez instalada abre sin conexión; todo lo que necesita viene incluido.</li>
+          <li><strong>Actualizar:</strong> abre la app con internet y ciérrala del todo; la versión nueva se activa al volver a abrirla.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6 · Límites</h2>
+        <ul>
+          <li>Los PDF con contraseña no se pueden abrir: quítala antes.</li>
+          <li>Las páginas se guardan como imagen, así que no se puede seleccionar ni buscar texto.</li>
+          <li>El libro recordado se guarda si el PDF pesa menos de 80 MB.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7 · Si algo falla</h2>
+        <ul>
+          <li><strong>Se ve borroso:</strong> activa HD; en un PDF largo, prueba con un archivo más corto.</li>
+          <li><strong>Tarda mucho:</strong> es normal en PDF largos; no cierres la app mientras prepara.</li>
+          <li><strong>«No se pudo abrir»:</strong> el archivo puede estar dañado; ábrelo antes en otro lector.</li>
+          <li><strong>No aparece Instalar app:</strong> ábrela desde el navegador (no desde un enlace dentro de otra app) y recarga.</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="foot">Tema claro u oscuro con el botón de la cabecera (círculo mitad lleno) (se comparte con el portafolio). Pasapáginas usa pdf.js (Apache 2.0) y StPageFlip (MIT).</p>
+  </div>
+</body>
+</html>
