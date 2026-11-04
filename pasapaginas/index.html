@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pasapáginas</title>
+  <meta name="description" content="Convierte un PDF en un libro con páginas que se voltean. Funciona sin internet.">
+  <meta name="theme-color" content="#DCE2E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10151C" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Pasapáginas">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Pasapáginas</h1>
+      <p>Convierte un PDF en un libro con páginas que se voltean. El archivo se queda en tu dispositivo.</p>
+    </div>
+    <div class="actions">
+      <span class="meta" id="meta"></span>
+      <button class="btn" id="install" type="button" hidden>Instalar app</button>
+      <button class="btn" id="close-book" type="button" hidden>Cerrar libro</button>
+      <button class="btn primary" id="open" type="button">Abrir PDF</button>
+      <input id="pdf-input" type="file" accept="application/pdf,.pdf" hidden>
+    </div>
+  </header>
+
+  <p id="msg" role="status"></p>
+
+  <main class="stage" id="stage">
+    <div id="bookwrap"></div>
+    <div class="busy" id="busy" hidden>
+      <div class="busy-box">
+        <p id="busy-text">Preparando páginas</p>
+        <div class="bar"><i id="busy-bar"></i></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <button class="btn" id="prev" type="button" aria-label="Página anterior">&#8592;</button>
+    <span class="counter" id="counter" aria-live="polite">—</span>
+    <button class="btn" id="next" type="button" aria-label="Página siguiente">&#8594;</button>
+    <input id="jump" type="range" min="1" max="1" value="1" aria-label="Ir a la página">
+    <button class="btn" id="full" type="button" aria-label="Pantalla completa" title="Pantalla completa">&#9974;</button>
+  </footer>
+
+  <div class="drop" id="drop" hidden><div>Suelta el PDF para abrirlo</div></div>
+
+  <script src="vendor/pdf.min.js"></script>
+  <script src="vendor/page-flip.browser.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

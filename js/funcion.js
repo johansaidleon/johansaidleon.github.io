@@ -1,143 +1,145 @@
-// ---------- carrusel de certificaciones ----------
-const carousel = document.querySelector('.carousel-inner');
-if (carousel) {
-  const images = carousel.querySelectorAll('img');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
+// Interacciones del portafolio: tema claro/oscuro, menú móvil, filtros de proyectos,
+// resaltado de la sección activa, visor de certificados y copiar el correo.
 
-  let currentIndex = 0;
+(function () {
+  'use strict';
 
-  function showImage(index) {
-    images.forEach(img => img.classList.remove('active'));
-    images[index].classList.add('active');
+  // ---------- tema claro / oscuro ----------
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+
+  function currentTheme() {
+    var set = root.getAttribute('data-theme');
+    if (set === 'light' || set === 'dark') return set;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }
-
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  }
-
-  nextBtn.addEventListener('click', nextImage);
-  prevBtn.addEventListener('click', prevImage);
-
-  // Cambiar imagen automáticamente cada 5 segundos
-  setInterval(nextImage, 5000);
-}
-
-// ---------- efecto de escritura en la terminal del hero ----------
-const typedEl = document.querySelector('.typed');
-if (typedEl) {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fullText = 'contactar --now';
-
-  if (prefersReducedMotion) {
-    typedEl.textContent = fullText;
-  } else {
-    let i = 0;
-    function typeChar() {
-      if (i <= fullText.length) {
-        typedEl.textContent = fullText.slice(0, i);
-        i++;
-        setTimeout(typeChar, 70);
-      }
-    }
-    setTimeout(typeChar, 600);
-  }
-}
-
-// ---------- animación de entrada al hacer scroll ----------
-const revealEls = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* sin almacenamiento: el cambio dura solo esta visita */ }
     });
-  }, { threshold: 0.08 });
-  revealEls.forEach(el => io.observe(el));
-} else {
-  revealEls.forEach(el => el.classList.add('in'));
-}
+  }
 
-// ---------- contadores de estadísticas ----------
-const counters = document.querySelectorAll('.stat-num[data-count]');
-const runCounter = (el) => {
-  const target = parseInt(el.dataset.count, 10);
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) { el.textContent = target; return; }
-  const start = performance.now();
-  const dur = 1200;
-  const tick = (now) => {
-    const p = Math.min((now - start) / dur, 1);
-    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-    if (p < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-};
-if (counters.length) {
-  if ('IntersectionObserver' in window) {
-    const co = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { runCounter(e.target); co.unobserve(e.target); }
+  // ---------- menú en móvil ----------
+  var navToggle = document.getElementById('nav-toggle');
+  var menu = document.getElementById('menu');
+
+  function setMenu(open) {
+    if (!navToggle || !menu) return;
+    menu.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    var icon = navToggle.querySelector('i');
+    if (icon) icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+  }
+
+  if (navToggle && menu) {
+    navToggle.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  }
+
+  // ---------- filtros de proyectos ----------
+  var filterBtns = document.querySelectorAll('.filter');
+  var projectCards = document.querySelectorAll('#project-grid .project');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
       });
-    }, { threshold: 0.6 });
-    counters.forEach(c => co.observe(c));
-  } else {
-    counters.forEach(runCounter);
-  }
-}
-
-// ---------- filtros de proyectos ----------
-const filterBtns = document.querySelectorAll('.filter');
-const projectCards = document.querySelectorAll('#project-grid .project');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    projectCards.forEach(card => {
-      const cats = (card.dataset.cat || '').split(' ');
-      card.classList.toggle('hide', f !== 'all' && !cats.includes(f));
+      var f = btn.dataset.filter;
+      projectCards.forEach(function (card) {
+        var cats = (card.dataset.cat || '').split(' ');
+        card.classList.toggle('hide', f !== 'all' && cats.indexOf(f) === -1);
+      });
     });
   });
-});
 
-// ---------- resalta la sección activa en el menú ----------
-const navLinks = document.querySelectorAll('nav ul li a:not(.nav-cta)');
-const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-if ('IntersectionObserver' in window && sections.length) {
-  const so = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  // ---------- sección activa en el menú ----------
+  var navLinks = document.querySelectorAll('.menu a:not(.menu-cta)');
+  var sections = Array.prototype.map.call(navLinks, function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { so.observe(s); });
+
+    // En el inicio (hero) ninguna sección del menú debe verse activa.
+    var top = document.getElementById('top');
+    if (top) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) navLinks.forEach(function (a) { a.classList.remove('active'); });
+      }, { rootMargin: '-40% 0px -55% 0px' }).observe(top);
+    }
+  }
+
+  // ---------- visor de certificados ----------
+  var lb = document.getElementById('lightbox');
+  if (lb && typeof lb.showModal === 'function') {
+    var lbImg = document.getElementById('lb-img');
+    var lbCap = document.getElementById('lb-cap');
+    var lbClose = document.getElementById('lb-close');
+
+    document.querySelectorAll('.cert').forEach(function (c) {
+      c.addEventListener('click', function () {
+        lbImg.src = c.dataset.img;
+        lbImg.alt = c.dataset.title;
+        lbCap.textContent = c.dataset.title;
+        lb.showModal();
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    lb.addEventListener('close', function () { document.body.style.overflow = ''; });
+    lbClose.addEventListener('click', function () { lb.close(); });
+    // clic fuera de la imagen cierra el visor
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+  }
+
+  // ---------- copiar el correo ----------
+  var copyBtn = document.getElementById('copy-mail');
+  var copyLabel = document.getElementById('copy-label');
+  var mailText = document.getElementById('mail-text');
+
+  function flash(text) {
+    if (!copyLabel) return;
+    copyLabel.textContent = text;
+    setTimeout(function () { copyLabel.textContent = 'Copiar'; }, 1800);
+  }
+
+  function selectMail() {
+    if (!mailText || !window.getSelection) return;
+    var range = document.createRange();
+    range.selectNodeContents(mailText);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
+  if (copyBtn && mailText) {
+    copyBtn.addEventListener('click', function () {
+      var value = mailText.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(
+          function () { flash('Copiado'); },
+          function () { selectMail(); flash('Selecciónalo'); }
+        );
+      } else {
+        selectMail();
+        flash('Selecciónalo');
       }
     });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  sections.forEach(s => so.observe(s));
-}
-
-// ---------- visor de certificados ----------
-const lb = document.getElementById('lightbox');
-if (lb) {
-  const lbImg = document.getElementById('lb-img');
-  const lbCap = document.getElementById('lb-cap');
-  const closeLb = () => { lb.hidden = true; document.body.style.overflow = ''; };
-  document.querySelectorAll('.cert').forEach(c => {
-    c.addEventListener('click', () => {
-      lbImg.src = c.dataset.img;
-      lbImg.alt = c.dataset.title;
-      lbCap.textContent = c.dataset.title;
-      lb.hidden = false;
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lb-close')) closeLb(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
-}
+  }
+})();

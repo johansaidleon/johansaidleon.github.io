@@ -1,0 +1,95 @@
+/* Base compartida: fuentes propias, colores, reset y botones.
+   La usan el portafolio y las demos (coulomb_laws). */
+
+@font-face { font-family: 'Bricolage Grotesque'; font-weight: 700; font-display: swap; src: url('../fonts/bricolage-grotesque-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Bricolage Grotesque'; font-weight: 800; font-display: swap; src: url('../fonts/bricolage-grotesque-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-weight: 400; font-display: swap; src: url('../fonts/instrument-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-weight: 500; font-display: swap; src: url('../fonts/instrument-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-weight: 600; font-display: swap; src: url('../fonts/instrument-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400; font-display: swap; src: url('../fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 500; font-display: swap; src: url('../fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 700; font-display: swap; src: url('../fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2'); }
+
+/* Colores: tema claro por defecto, oscuro si el sistema lo pide o si se elige con el botón. */
+:root {
+  color-scheme: light;
+  --bg: #F3F5F9;
+  --surface: #FFFFFF;
+  --surface-2: #E9EDF4;
+  --ink: #0D1930;
+  --muted: #475569;
+  --line: #D3DAE5;
+  --amber: #E8A33D;          /* relleno de botones y marcas */
+  --amber-ink: #14161B;      /* texto sobre ámbar */
+  --amber-text: #8A5000;     /* texto de acento sobre fondo claro */
+  --teal: #0F766E;
+  --danger: #B42318;
+  --shadow: 0 1px 2px rgba(13, 25, 48, 0.06), 0 8px 24px rgba(13, 25, 48, 0.06);
+
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0F131A;
+    --surface: #161B25;
+    --surface-2: #1E2532;
+    --ink: #E8ECF3;
+    --muted: #9AA6B8;
+    --line: #2A3344;
+    --amber-text: #F0B65C;
+    --teal: #5FB8A8;
+    --danger: #F2877C;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0F131A;
+  --surface: #161B25;
+  --surface-2: #1E2532;
+  --ink: #E8ECF3;
+  --muted: #9AA6B8;
+  --line: #2A3344;
+  --amber-text: #F0B65C;
+  --teal: #5FB8A8;
+  --danger: #F2877C;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; letter-spacing: -0.015em; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 46px; padding: 0 20px;
+  border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink);
+  font-weight: 600; font-size: 0.98rem; text-decoration: none; cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, background-color 0.15s ease;
+}
+.btn:hover { border-color: var(--ink); }
+.btn-primary { background: var(--amber); border-color: var(--amber); color: var(--amber-ink); }
+.btn-primary:hover { border-color: var(--amber-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}

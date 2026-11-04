@@ -1,84 +1,42 @@
-:root {
-  --bg: #12151b;
-  --panel: #191d26;
-  --panel-2: #1e2430;
-  --border: #2b3140;
-  --text: #e9ebef;
-  --muted: #8a90a0;
-  --amber: #e8a33d;
-  --teal: #5fb8a8;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', Arial, sans-serif;
-  line-height: 1.6;
-}
-.contenedor { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
-.volver { color: var(--teal); text-decoration: none; font-size: 0.9rem; }
-.volver:hover { text-decoration: underline; }
-h1 { margin: 20px 0 6px; }
-.lead { color: var(--muted); margin: 0 0 24px; }
+/* Calculadora de Coulomb. Colores y fuentes vienen de ../css/base.css. */
 
-.opciones { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.contenedor { max-width: 660px; margin: 0 auto; padding: 32px 20px 64px; }
+.volver { color: var(--amber-text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.volver:hover { text-decoration: underline; }
+h1 { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 800; margin: 20px 0 8px; }
+.lead { color: var(--muted); margin: 0 0 26px; }
+
+.opciones { border: 0; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.opciones legend { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); padding: 0; margin-bottom: 10px; }
 .opciones input { position: absolute; opacity: 0; pointer-events: none; }
 .opciones label {
-  border: 1px solid var(--border);
-  background: var(--panel);
-  border-radius: 6px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 0.9rem;
+  border: 1px solid var(--line); background: var(--surface); border-radius: 10px;
+  padding: 10px 18px; cursor: pointer; font-weight: 500;
 }
-.opciones input:checked + label { border-color: var(--amber); color: var(--amber); }
-.opciones input:focus-visible + label { outline: 2px solid var(--amber); outline-offset: 2px; }
+.opciones label:hover { border-color: var(--ink); }
+.opciones input:checked + label { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.opciones input:focus-visible + label { outline: 3px solid var(--amber); outline-offset: 3px; }
 
 .campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.campo label { font-size: 0.9rem; color: var(--muted); }
+.campo label { font-size: 0.95rem; color: var(--muted); }
 .campo input {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text);
-  padding: 10px 12px;
-  font-size: 1rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  color: var(--ink); padding: 12px 14px; font: inherit; font-size: 1.05rem;
 }
-.campo input:focus { outline: 2px solid var(--amber); outline-offset: 1px; }
+.campo input:focus { outline: 3px solid var(--amber); outline-offset: 2px; border-color: var(--ink); }
 
 #btn {
-  background: var(--amber);
-  color: #12151b;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
+  background: var(--amber); color: var(--amber-ink); border: 0; border-radius: 10px;
+  min-height: 48px; padding: 0 28px; font-size: 1.02rem; font-weight: 600; cursor: pointer;
 }
-#btn:hover { filter: brightness(1.1); }
+#btn:hover { filter: brightness(1.06); }
 
 #result {
-  margin: 20px 0 0;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 1.1rem;
-  color: var(--teal);
-  min-height: 1.6em;
+  margin: 20px 0 0; min-height: 1.6em; font-family: var(--font-mono); font-size: 1.15rem; color: var(--teal); overflow-wrap: anywhere;
 }
-#result.error { color: #e2645a; }
+#result.error { color: var(--danger); }
 
-.teoria {
-  margin-top: 40px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 24px 20px;
-}
-.teoria h2 { font-size: 1.05rem; margin: 20px 0 6px; }
+.teoria { margin-top: 44px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 8px 26px 22px; }
+.teoria h2 { font-size: 1.1rem; margin: 22px 0 6px; }
 .teoria p, .teoria li { color: var(--muted); margin: 0 0 6px; }
-.formula {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  color: var(--amber) !important;
-  font-size: 1.1rem;
-}
+.formula { font-family: var(--font-mono); color: var(--amber-text) !important; font-size: 1.15rem; }

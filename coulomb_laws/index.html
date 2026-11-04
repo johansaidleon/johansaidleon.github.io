@@ -4,17 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Johan Said Gelvez León">
+  <meta name="description" content="Calculadora interactiva de la ley de Coulomb: calcula la fuerza, una de las cargas o la distancia.">
+  <meta name="theme-color" content="#F3F5F9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F131A" media="(prefers-color-scheme: dark)">
   <title>Ley de Coulomb — Calculadora</title>
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="contenedor">
-    <a class="volver" href="../index.html">← volver al portafolio</a>
+    <a class="volver" href="../index.html#proyectos">&larr; Volver al portafolio</a>
 
     <h1>Ley de Coulomb</h1>
     <p class="lead">Elige la variable que quieres calcular, completa los demás datos y presiona <strong>Calcular</strong>.</p>
 
-    <div class="opciones" role="radiogroup" aria-label="Variable a calcular">
+    <fieldset class="opciones">
+      <legend>Variable a calcular</legend>
       <input type="radio" id="forceRadio" name="variables" checked>
       <label for="forceRadio">Fuerza</label>
 
@@ -26,22 +34,22 @@
 
       <input type="radio" id="distancebwtheobjectsRadio" name="variables">
       <label for="distancebwtheobjectsRadio">Distancia</label>
-    </div>
+    </fieldset>
 
     <div class="campo">
       <label for="v1" id="variable1">(q1) Carga 1 (C)</label>
-      <input type="number" id="v1" step="any">
+      <input type="number" id="v1" step="any" inputmode="decimal">
     </div>
     <div class="campo">
       <label for="v2" id="variable2">(q2) Carga 2 (C)</label>
-      <input type="number" id="v2" step="any">
+      <input type="number" id="v2" step="any" inputmode="decimal">
     </div>
     <div class="campo">
       <label for="v3" id="variable3">(r) Distancia entre las cargas (m)</label>
-      <input type="number" id="v3" step="any">
+      <input type="number" id="v3" step="any" inputmode="decimal">
     </div>
 
-    <button id="btn">Calcular</button>
+    <button id="btn" type="button">Calcular</button>
     <p id="result" aria-live="polite"></p>
 
     <section class="teoria">
