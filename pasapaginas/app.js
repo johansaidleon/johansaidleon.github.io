@@ -360,6 +360,7 @@
         data: data,
         cMapUrl: 'vendor/cmaps/',
         cMapPacked: true,
+        isEvalSupported: false, // mitiga CVE-2024-4367 (ejecución de código desde un PDF malicioso en pdf.js < 4.2.67)
         standardFontDataUrl: 'vendor/standard_fonts/'
       }).promise;
       var n = pdf.numPages;
