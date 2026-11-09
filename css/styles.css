@@ -212,6 +212,43 @@ body { background-image: var(--glow); background-repeat: no-repeat; background-s
 .skill-card { border-radius: 16px; padding: 26px; }
 .skill-card h3 { font-size: 1.4rem; font-weight: 600; display: flex; align-items: center; gap: 12px; }
 .skill-card h3 i { color: var(--amber-text); font-size: 1.05rem; }
+.skill-card .chips.logos { margin-top: 18px; }
+
+/* logos de tecnologías: color de la marca cuando existe; si no, dorado del tema */
+.chips.logos span { display: inline-flex; align-items: center; gap: 8px; }
+.chips.logos i { font-size: 1.05em; width: 1.15em; text-align: center; color: var(--amber-text); flex: none; }
+.chips.logos .fa-html5 { color: #E34F26; }
+.chips.logos .fa-css3-alt { color: #2965F1; }
+.chips.logos .fa-js { color: #F0DB4F; }
+.chips.logos .ts { color: #3178C6; }
+.chips.logos .fa-angular { color: #DD0031; }
+.chips.logos .fa-react { color: #61DAFB; }
+.chips.logos .fa-vuejs { color: #4FC08D; }
+.chips.logos .tw { color: #06B6D4; }
+.chips.logos .fa-bootstrap { color: #7952B3; }
+.chips.logos .fa-python { color: #4B8BBE; }
+.chips.logos .dj { color: #44B78B; }
+.chips.logos .fa-bolt { color: #009688; }
+.chips.logos .fa-node-js { color: #539E43; }
+.chips.logos .fa-java { color: #ED8B00; }
+.chips.logos .sb { color: #6DB33F; }
+.chips.logos .fa-microsoft { color: #8A5CD1; }
+.chips.logos .mssql { color: #CC2927; }
+.chips.logos .mysql { color: #4479A1; }
+.chips.logos .pg { color: #4169E1; }
+.chips.logos .mongo { color: #47A248; }
+.chips.logos .sqlite { color: #4FB3E8; }
+.chips.logos .fa-docker { color: #2496ED; }
+.chips.logos .fa-git-alt { color: #F05032; }
+.chips.logos .fa-github, .chips.logos .fa-unity { color: var(--ink); }
+.chips.logos .fa-telegram { color: #26A5E4; }
+.chips.logos .fa-figma { color: #F24E1E; }
+.chips.logos .fa-jira { color: #2684FF; }
+.chips.logos .fa-trello { color: #2D9CDB; }
+.chips.logos .fa-windows { color: #5391FE; }
+.chips.logos .fa-wordpress { color: #3D8EB9; }
+.chips.logos .fa-yoast { color: #C94F9E; }
+.chips.logos .postman { color: #FF6C37; }
 
 .sec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 310px), 1fr)); gap: 16px; }
 .sec-card { border-radius: 16px; padding: 22px 24px; }

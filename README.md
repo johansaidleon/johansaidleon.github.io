@@ -1,4 +1,4 @@
-# Portafolio — Johan Said Gelvez León
+# Portafolio — Johan Said Leon
 
 Sitio estático publicado en GitHub Pages: https://johansaidleon.github.io/
 
@@ -22,7 +22,7 @@ pasapaginas/            Demo: Pasapáginas, visor de PDF como libro (PWA instala
 - **Calculadora de Coulomb:** `/coulomb_laws/`.
 - **Flores Bot:** vive en su propio repositorio (https://github.com/johansaidleon/flores-bot) y en https://flores-bot.onrender.com; el portafolio solo enlaza a ambos. Render apaga el servicio tras 15 min sin tráfico, así que el primer clic puede tardar unos segundos.
 
-El resto de proyectos (invitaciones de boda, detección de incidentes con IA, Semillas del Amazonas, PubControl, laboratorios de seguridad, dron, bloqueo por cámara, etc.) aparecen solo como información; no hay código asociado en este repositorio.
+El resto de proyectos (plataforma de invitaciones digitales, detección de incidentes con IA, Semillas del Amazonas, PubControl, laboratorios de seguridad, dron, bloqueo por cámara, etc.) aparecen solo como información; no hay código asociado en este repositorio.
 
 ## Cambiar datos de contacto
 
