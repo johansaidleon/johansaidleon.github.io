@@ -1,7 +1,7 @@
 /* Service worker: guarda la app en el dispositivo para que abra sin internet.
    Sube VERSION cada vez que cambies cualquier archivo de esta carpeta, o los
    dispositivos que ya la instalaron seguirán viendo la versión anterior. */
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE = 'pasapaginas-' + VERSION;
 
 const CORE = [

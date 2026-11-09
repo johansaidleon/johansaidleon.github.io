@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests; script-src 'self' 'sha256-QXegJy1HAemkDcZLEKWetY0YnZhU1/+IqrMHhHvLruQ='; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pasapáginas · Hoja de instrucciones</title>
   <meta name="description" content="Todas las instrucciones de Pasapáginas en una hoja: abrir un PDF, pasar páginas, nitidez, instalar como app y solución de problemas.">
@@ -13,6 +15,10 @@
       var t = localStorage.getItem('theme');
       if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
     } catch (e) {}
+    document.addEventListener('DOMContentLoaded', function () {
+      var b = document.getElementById('btn-print');
+      if (b) b.addEventListener('click', function () { window.print(); });
+    });
   </script>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,7 +26,7 @@
   <div class="sheet">
     <div class="sheet-top no-print">
       <a class="btn" href="./">&larr; Volver a Pasapáginas</a>
-      <button class="btn primary" type="button" onclick="window.print()">Imprimir o guardar en PDF</button>
+      <button class="btn primary" type="button" id="btn-print">Imprimir o guardar en PDF</button>
     </div>
 
     <h1>Pasa<em>páginas</em></h1>
