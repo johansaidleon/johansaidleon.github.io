@@ -7,6 +7,7 @@
 @font-face { font-family: 'Cormorant Garamond'; font-weight: 600; font-style: normal; font-display: swap; src: url('../fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Cormorant Garamond'; font-weight: 700; font-style: normal; font-display: swap; src: url('../fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Cormorant Garamond'; font-weight: 600; font-style: italic; font-display: swap; src: url('../fonts/cormorant-garamond-latin-600-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Archivo'; font-weight: 400 700; font-stretch: 62% 125%; font-display: swap; src: url('../fonts/archivo-latin-wdth-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Instrument Sans'; font-weight: 400; font-display: swap; src: url('../fonts/instrument-sans-latin-400-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Instrument Sans'; font-weight: 500; font-display: swap; src: url('../fonts/instrument-sans-latin-500-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Instrument Sans'; font-weight: 600; font-display: swap; src: url('../fonts/instrument-sans-latin-600-normal.woff2') format('woff2'); }
@@ -14,45 +15,47 @@
 @font-face { font-family: 'JetBrains Mono'; font-weight: 500; font-display: swap; src: url('../fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2'); }
 @font-face { font-family: 'JetBrains Mono'; font-weight: 700; font-display: swap; src: url('../fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2'); }
 
-/* Colores: tema oscuro "luxury" por defecto (negro cálido + dorado champán).
-   El botón de la barra cambia a un tema claro marfil. */
+/* Colores: azul real oscuro + negro + dorado (mismo sistema que johansaidleon.dev).
+   El botón de la barra cambia a un tema claro. */
 :root {
   color-scheme: dark;
-  --bg: #0B0B0D;
-  --surface: #131316;
-  --surface-2: #1B1B20;
-  --ink: #F4EFE6;
-  --muted: #B9B2A5;           /* contraste >= 9:1 sobre --bg */
-  --line: #2B2A2E;
-  --line-strong: #4A4333;
-  --amber: #C9A55C;           /* dorado: relleno de botones y marcas */
-  --amber-ink: #15110A;       /* texto sobre dorado */
-  --amber-text: #D9B96C;      /* texto de acento */
-  --teal: #7FC4B2;
+  --bg: #000F20;
+  --surface: #00213F;
+  --surface-2: #062B4F;
+  --ink: #F1F3F6;
+  --muted: #B3BFCD;
+  --line: #12304F;
+  --line-strong: #2A4C72;
+  --amber: #C9A85C;           /* dorado: relleno de botones y marcas */
+  --amber-ink: #0A0F17;       /* texto sobre dorado */
+  --amber-text: #E0C27F;      /* texto de acento */
+  --teal: #7FE0B5;
   --danger: #F2877C;
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 18px 40px rgba(0, 0, 0, 0.45);
-  --glow: radial-gradient(60% 50% at 80% 0%, rgba(201, 165, 92, 0.14), transparent 70%);
+  --navy: #002349;
+  --gold: #957C3D;
+  --shadow: 0 20px 50px -24px rgba(0, 0, 0, 0.7);
+  --glow: none;
 
-  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
-  --font-body: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Archivo', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Archivo', 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
 }
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #F8F4EC;
+  --bg: #FFFFFF;
   --surface: #FFFFFF;
-  --surface-2: #F0EADD;
-  --ink: #1A1610;
-  --muted: #5A5245;
-  --line: #E1D8C6;
-  --line-strong: #C9B88F;
-  --amber: #B8923F;
+  --surface-2: #EEF2F7;
+  --ink: #0B1B30;
+  --muted: #475669;
+  --line: #DFE4EB;
+  --line-strong: #B9C5D3;
+  --amber: #957C3D;
   --amber-ink: #FFFFFF;
-  --amber-text: #7A5A18;
-  --teal: #0F6B5E;
+  --amber-text: #7A6230;
+  --teal: #0F7A5C;
   --danger: #B42318;
-  --shadow: 0 1px 2px rgba(60, 45, 15, 0.06), 0 14px 34px rgba(60, 45, 15, 0.08);
-  --glow: radial-gradient(60% 50% at 80% 0%, rgba(184, 146, 63, 0.14), transparent 70%);
+  --shadow: 0 18px 40px -24px rgba(0, 35, 73, 0.35);
+  --glow: none;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -69,22 +72,22 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance; margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); font-stretch: 112%; font-weight: 600; line-height: 1.1; letter-spacing: -0.015em; text-wrap: balance; margin: 0; }
 p { margin: 0; }
 :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 0 24px;
-  border-radius: 999px; border: 1px solid var(--line-strong);
+  border-radius: 6px; border: 1px solid var(--line-strong);
   background: transparent; color: var(--ink);
   font-weight: 600; font-size: 1rem; letter-spacing: 0.01em; text-decoration: none; cursor: pointer;
   transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 .btn:hover { border-color: var(--amber); color: var(--amber-text); }
-.btn-primary { background: linear-gradient(135deg, #E3C47E, #BF9A4F 55%, #A98233); border-color: transparent; color: #15110A; }
-:root[data-theme="light"] .btn-primary { background: linear-gradient(135deg, #C7A04B, #A98233); color: #fff; }
-.btn-primary:hover { color: #15110A; filter: brightness(1.08); }
+.btn-primary { background: var(--amber); border-color: var(--amber); color: var(--amber-ink); }
+:root[data-theme="light"] .btn-primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+.btn-primary:hover { color: var(--amber-ink); box-shadow: 0 0 0 4px color-mix(in srgb, var(--amber) 25%, transparent); }
 :root[data-theme="light"] .btn-primary:hover { color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {

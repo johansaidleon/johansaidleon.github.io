@@ -8,7 +8,7 @@
     <title>Johan Said Leon — Portafolio</title>
     <meta name="author" content="Johan Said Leon">
     <meta name="description" content="Johan Said Leon, Ingeniero de Sistemas en Bogotá. Desarrollador full stack con enfoque en seguridad desde el diseño, redes e inteligencia artificial aplicada. Abierto a oportunidades en desarrollo, soporte técnico y seguridad de la información.">
-    <meta name="theme-color" content="#0B0B0D">
+    <meta name="theme-color" content="#001A36">
     <meta property="og:title" content="Johan Said Leon — Portafolio">
     <meta property="og:description" content="Ingeniero de Sistemas · Desarrollador Full Stack · Seguridad. Bogotá, Colombia.">
     <meta property="og:type" content="website">
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/funcion.js" defer></script>
+    <script src="js/efectos.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,6 +64,8 @@
     <main id="main">
 
         <!-- ===== Inicio ===== -->
+        <div class="hero-band">
+        <canvas id="circuit" aria-hidden="true"></canvas>
         <section class="hero" id="top">
             <div class="hero-text">
                 <div class="hero-id">
@@ -80,12 +83,20 @@
                 </div>
             </div>
 
-            <aside class="card-id" aria-label="Datos rápidos">
-                <dl class="facts">
-                    <div><dt>Busco</dt><dd>Desarrollador Full Stack, Soporte Técnico o Seguridad de la Información</dd></div>
-                    <div><dt>Estudios</dt><dd>Ingeniería de Sistemas, UNIMINUTO · Finalizó en 2027</dd></div>
-                    <div><dt>Idiomas</dt><dd>Español nativo · Inglés B2</dd></div>
-                </dl>
+            <aside class="card-id term" aria-label="Datos rápidos y terminal interactiva">
+                <div class="term-bar"><i aria-hidden="true"></i>johan@portafolio: ~<span>perfil.json</span></div>
+                <div class="term-out" id="term-out" aria-live="polite">
+                    <p class="pr"><b>~ $</b> cat perfil.json</p>
+                    <dl class="facts">
+                        <div><dt>Busco</dt><dd>Desarrollador Full Stack, Soporte Técnico o Seguridad de la Información</dd></div>
+                        <div><dt>Estudios</dt><dd>Ingeniería de Sistemas, UNIMINUTO · Finalizó en 2027</dd></div>
+                        <div><dt>Idiomas</dt><dd>Español nativo · Inglés B2</dd></div>
+                    </dl>
+                </div>
+                <form class="term-in" id="term-form" autocomplete="off"><label for="term-cmd">~ $</label><input id="term-cmd" spellcheck="false" aria-label="Escribe un comando, por ejemplo: ayuda"></form>
+                <div class="term-chips" id="term-chips" aria-label="Comandos rápidos">
+                    <button type="button" data-cmd="proyectos">proyectos</button><button type="button" data-cmd="stack">stack</button><button type="button" data-cmd="experiencia">experiencia</button><button type="button" data-cmd="contacto">contacto</button><button type="button" data-cmd="ayuda">ayuda</button>
+                </div>
             </aside>
         </section>
 
@@ -94,6 +105,7 @@
             <div class="stat"><span class="stat-num">3</span><span class="stat-label">clientes freelance</span></div>
             <div class="stat"><span class="stat-num">60+</span><span class="stat-label">lenguajes, frameworks y herramientas</span></div>
             <div class="stat"><span class="stat-num">B2</span><span class="stat-label">nivel de inglés</span></div>
+        </div>
         </div>
 
         <!-- ===== Sobre mí ===== -->
@@ -612,9 +624,9 @@
                     <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <div>
                         <h3>Correo</h3>
-                        <p class="mail" id="mail-text">exlorer7@gmail.com</p>
+                        <p class="mail" id="mail-text">hola@johansaidleon.dev</p>
                         <div class="contact-actions">
-                            <a class="btn btn-primary" href="mailto:exlorer7@gmail.com?subject=Contacto%20desde%20tu%20portafolio&amp;body=Hola%20Johan%2C%20">Enviar correo</a>
+                            <a class="btn btn-primary" href="mailto:hola@johansaidleon.dev?subject=Contacto%20desde%20tu%20portafolio&amp;body=Hola%20Johan%2C%20">Enviar correo</a>
                             <button class="btn" type="button" id="copy-mail"><i class="fa-solid fa-copy" aria-hidden="true"></i> <span id="copy-label">Copiar</span></button>
                         </div>
                     </div>
