@@ -79,7 +79,7 @@
   var CMDS = {
     ayuda: function () {
       line('Comandos disponibles:', 'gd');
-      ['whoami       quién soy', 'proyectos    lo que he construido', 'stack        tecnologías que uso', 'experiencia  trayectoria y estudios', 'seguridad    mi enfoque', 'certificados cursos y diplomas', 'contacto     cómo escribirme', 'limpiar      borrar la pantalla'].forEach(function (t) { line('  ' + t); });
+      ['whoami       quién soy', 'proyectos    lo que he construido', 'stack        tecnologías que uso', 'experiencia  trayectoria y estudios', 'seguridad    mi enfoque', 'certificados cursos y diplomas', 'contacto     cómo escribirme', 'servicios    contratarme como freelance', 'limpiar      borrar la pantalla'].forEach(function (t) { line('  ' + t); });
     },
     whoami: function () { line('Johan Said Leon', 'gd'); line('Ingeniero de Sistemas, Bogotá, Colombia.'); line('Full stack, seguridad desde el diseño e IA aplicada.'); },
     proyectos: function () {
@@ -98,10 +98,11 @@
     },
     certificados: function () { line('7 cursos y diplomas: seguridad, programación web, .NET, Git, inglés B2...', 'ok'); go('certificados'); },
     contacto: function () { line('Correo:', 'gd'); link('hola@johansaidleon.dev', 'mailto:hola@johansaidleon.dev'); line('LinkedIn y GitHub en la sección de contacto.', 'dim'); go('contacto'); },
+    servicios: function () { line('¿Necesitas una web, una app o un sistema a la medida?', 'gd'); line('Mira mis servicios y agenda una reunión gratis:'); link('johansaidleon.dev', 'https://johansaidleon.dev'); },
     limpiar: function () { while (out.firstChild) out.removeChild(out.firstChild); },
     sudo: function () { line('Permiso denegado. Aquí la seguridad va en serio.', 'gd'); }
   };
-  var ALIAS = { help: 'ayuda', clear: 'limpiar', cls: 'limpiar', ls: 'ayuda', projects: 'proyectos', contact: 'contacto' };
+  var ALIAS = { contratar: 'servicios', hire: 'servicios', help: 'ayuda', clear: 'limpiar', cls: 'limpiar', ls: 'ayuda', projects: 'proyectos', contact: 'contacto' };
 
   var exec = function (raw) {
     var cmd = String(raw).trim().toLowerCase().slice(0, 60);

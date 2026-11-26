@@ -457,3 +457,14 @@ body { background-image: none; }
 }
 @media (max-width: 820px) { .t-item::before { display: none; } }
 @media (max-width: 560px) { .term-out { height: 260px; } }
+
+/* llamado a contratar servicios (enlace a johansaidleon.dev) */
+.hire { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; margin-bottom: 24px; padding: 30px 32px; border-radius: 12px; border: 1px solid #957C3D; background: radial-gradient(90% 140% at 100% 0%, #00305F 0%, #002349 45%, #000F20 100%); color: #F1F3F6; position: relative; overflow: hidden; }
+.hire::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #E4CB8E, #957C3D); }
+.hire-text { max-width: 62ch; display: grid; gap: 8px; }
+.hire-kicker { font-family: var(--font-mono); font-size: .85rem; color: #E4CB8E; }
+.hire h3 { font-size: 1.5rem; color: #fff; }
+.hire p { color: #C2CBD6; }
+.hire .hire-btn { background: #C9A85C; border-color: #C9A85C; color: #0A0F17; flex: none; }
+.footer-note a { color: var(--amber-text); }
+@media (max-width: 560px) { .hire { padding: 24px 22px; } .hire .hire-btn { width: 100%; } }
